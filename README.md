@@ -14,8 +14,9 @@ Tool Time (*working title*) will be a mobile tool used by construction professio
 * Ling Ling:[project role], [asu.edu email], [github username]
 
 ##Getting Started/Installation
-######Looking to **rent** a tool? [Check out our iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!
-######**Administators**, visit [this site](http://www.bayley.net/tooltime).
+Looking to **rent** a tool? [Check out our iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!
+
+**Administators**, visit [this site](http://www.bayley.net/tooltime).
 
 ##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.png?label=ready&title=Ready)](https://waffle.io/asu-cis-capstone/tooltime)
 
