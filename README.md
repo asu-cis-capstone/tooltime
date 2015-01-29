@@ -21,15 +21,12 @@
 **Implementation:** Start [here](https://github.com/asu-cis-capstone/tooltime/blob/master/INSTALL.md).
 
 ##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.png?label=ready&title=Ready)](https://waffle.io/asu-cis-capstone/tooltime)
-####Near
 - Obtain a Mac and prep for iOS development
 - Develop iOS app
 - Create web tool for admins
 - Implement cloud-based DB   
-####Far
 - GPS tracking app functionality
 - Security features   
-####Wherever you are
 - Android app?
 
 ##Release Notes
