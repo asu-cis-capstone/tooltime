@@ -16,7 +16,9 @@
 
 ##Getting Started/Installation
 **Rent a tool:** [Check out the iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!
+
 **Administators:** visit [this site](http://www.bayley.net/tooltime) and log in.
+
 **Implementation:** Start [here]().
 
 ##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.png?label=ready&title=Ready)](https://waffle.io/asu-cis-capstone/tooltime)
