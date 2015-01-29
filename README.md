@@ -9,7 +9,6 @@
 
 ##Collaborators
 <img src="https://cloud.githubusercontent.com/assets/10656205/5954367/a5317e24-a753-11e4-96c4-29c001a64856.png" height=206 align="right">
-
 Name  | Role | ASU Email | GitHub
 ----  | ---- | ----  | ----
 Brandon Lacquement | Lead Development | blacquem | @brlacquement
