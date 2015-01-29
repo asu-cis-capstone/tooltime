@@ -15,9 +15,9 @@
 * Derrick Kearney: [project role] | [asu.edu email] | [github username]
 * Ling Ling: [project role] | [asu.edu email] | @conduongxua
 
-Name  | Role
+Name  | Role | Email | GitHub
 ------------- | -------------
-Brandon  | Lead Development
+Brandon Lacquement | Lead Development | blacquem@asu.edu | @brlacquement
 Content Cell  | Content Cell
 
 ##Getting Started/Installation
