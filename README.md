@@ -1,4 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.png?label=ready&title=Ready)](https://waffle.io/asu-cis-capstone/tooltime)
 #Its Tool Time!
 
 ##Overview
@@ -10,6 +9,6 @@ Tool Time (*working title*) will be a mobile tool used by construction professio
 
 ##Getting Started/Installation
 
-##Backlog
+##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.png?label=ready&title=Ready)](https://waffle.io/asu-cis-capstone/tooltime)
 
 ##Release Notes
