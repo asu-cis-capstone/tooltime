@@ -30,7 +30,7 @@
 - Android app?
 
 ##Release Notes
-**V0.1:**
+**V0.1:**    
 * Initial repository 
 * waffle.io integration 
 * Visual mockups
