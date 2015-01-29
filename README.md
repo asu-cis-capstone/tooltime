@@ -1,7 +1,7 @@
 #Its ToolTime!
 
 ##Overview
-<img src="https://cloud.githubusercontent.com/assets/10656205/5954551/18c3b36e-a756-11e4-935a-142740884fa6.jpg" height=130 align="left"> **Tool Time** will be a mobile tool used by construction professionals to manage and track internal tool rental. It will consist of a mobile app (initially iOS) that will be used by Bayley Construction employees to rent and return tools from the company's warehouse. Additionally, a webpage will be accessible to the project manager to view the status of tools, individual rental histories of employees, add tools, remove tools, etc. 
+<img src="https://cloud.githubusercontent.com/assets/10656205/5954551/18c3b36e-a756-11e4-935a-142740884fa6.jpg" height=130 align="right"> **Tool Time** will be a mobile tool used by construction professionals to manage and track internal tool rental. It will consist of a mobile app (initially iOS) that will be used by Bayley Construction employees to rent and return tools from the company's warehouse. Additionally, a webpage will be accessible to the project manager to view the status of tools, individual rental histories of employees, add tools, remove tools, etc. 
 
 ##Bayley Construction
 <img src="https://cloud.githubusercontent.com/assets/10656205/5953845/77b862d4-a74c-11e4-8401-9cfba243d58b.png" align="right">
@@ -18,7 +18,7 @@
 ##Getting Started/Installation
 **Rent a tool:** Check out the [iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!   
 **Administators:** visit [this site](http://www.bayley.net/tooltime) and log in.   
-**Implementation:** Start [here]().
+**Implementation:** Start [here](https://github.com/asu-cis-capstone/tooltime/blob/master/INSTALL.md).
 
 ##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.png?label=ready&title=Ready)](https://waffle.io/asu-cis-capstone/tooltime)
 - Obtain a Mac and prep for iOS development
