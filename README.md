@@ -20,7 +20,7 @@
 **Administators:** visit [this site](http://www.bayley.net/tooltime) and log in.   
 **Implementation:** Start [here](https://github.com/asu-cis-capstone/tooltime/blob/master/INSTALL.md).
 
-##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.png?label=ready&title=Ready)](https://waffle.io/asu-cis-capstone/tooltime)
+##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.svg?label=ready&title=Ready)](http://waffle.io/asu-cis-capstone/tooltime)
 - Obtain a Mac and prep for iOS development
 - Develop iOS app
 - Create web tool for admins
