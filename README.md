@@ -1,4 +1,4 @@
-#Its ToolTime!
+#Its ToolTime![![Demo link](https://cloud.githubusercontent.com/assets/10656205/5954633/770008fa-a757-11e4-84ee-077c5217b46a.png)](https://waffle.io/asu-cis-capstone/tooltime/DEMO.pdf)
 
 ##Overview
 <img src="https://cloud.githubusercontent.com/assets/10656205/5954514/a56da708-a755-11e4-83b3-265d6dbd65fd.jpg" height=130 align="right"> **Tool Time** will be a mobile tool used by construction professionals to manage and track internal tool rental. It will consist of a mobile app (initially iOS) that will be used by Bayley Construction employees to rent and return tools from the company's warehouse. Additionally, a webpage will be accessible to the project manager to view the status of tools, individual rental histories of employees, add tools, remove tools, etc. 
@@ -7,7 +7,7 @@
 <img src="https://cloud.githubusercontent.com/assets/10656205/5953845/77b862d4-a74c-11e4-8401-9cfba243d58b.png" align="right">
 [Bayley Construction](http://www.bayley.net/) was established in Mercer Island, Washington in 1963. Since then, their work in commerical construction has expanded throughout the west coast and across the US. They currently have offices in Arizona, California and Washington. Bayley is constantly seeking to improve their internal business practices and has sought our team to develop an efficient, user-friendly way to manage their existing tool rental system. Internally, Bayley rents tools to employees from their warehouses and currently has no way of managing these rentals. They would like our team to develop a system that will allow employees to rent and return tools by scanning barcodes, create reports based on rental history, and manage tool inventory. 
 
-##Project Contributors
+##Collaborators
 <img src="https://cloud.githubusercontent.com/assets/10656205/5954367/a5317e24-a753-11e4-96c4-29c001a64856.png" height=206 align="right">
 * Brandon Lacquement: [project role] | [asu.edu email] | [github username]
 * Jin Lim: [project role] | [asu.edu email] | [github username]
