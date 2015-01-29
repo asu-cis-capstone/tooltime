@@ -20,5 +20,11 @@
 ######*Administators*, visit [this site](http://www.bayley.net/tooltime) and log in.
 
 ##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.png?label=ready&title=Ready)](https://waffle.io/asu-cis-capstone/tooltime)
-
+- Obtain a Mac and prep for iOS development
+- Develop iOS app
+- Create web tool for admins
+- Implement cloud-based DB
+- GPS tracking app functionality
+- Security features
+- Android app?
 ##Release Notes
