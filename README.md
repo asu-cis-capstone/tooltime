@@ -7,11 +7,14 @@ Tool Time (*working title*) will be a mobile tool used by construction professio
 [Bayley Construction](http://www.bayley.net/) was established in Mercer Island, Washington in 1963. Since then, their work in commerical construction has expanded throughout the west coast and across the US. They currently have offices in Arizona, California and Washington. Bayley is constantly seeking to improve their internal business practices and has sought our team to develop an efficient, user-friendly way to manage their existing tool rental system. Internally, Bayley rents tools to employees from their warehouses and currently has no way of managing these rentals. They would like our team to develop a system that will allow employees to rent and return tools by scanning barcodes, create reports based on rental history, and manage tool inventory. 
 
 ##Project Contributors
-* Brandon Lacquement: [project role], [asu.edu email], [github username]
-* Jin Lim: [project role], [asu.edu email], [github username]
-* Taylor Reigel:[project role], [asu.edu email], [github username]
-* Derrick Kearney:[project role], [asu.edu email], [github username]
-* Ling Ling:[project role], [asu.edu email], [github username]
+Name | Role | Email | GitHub
+--- | --- | ---
+
+Brandon Lacquement | [project role] | [asu.edu email] | [github username]
+Jin Lim | [project role] | [asu.edu email] | [github username]
+Taylor Reigel | [project role] | [asu.edu email] | [github username]
+Derrick Kearney | [project role] | [asu.edu email] | [github username]
+Ling Ling | [project role] | [asu.edu email] | [github username]
 
 ##Getting Started/Installation
 ######Looking to *rent* a tool? [Check out our iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!
