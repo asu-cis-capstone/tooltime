@@ -16,9 +16,9 @@
 * Ling Ling: [project role] | [asu.edu email] | @conduongxua
 
 Name  | Role | Email | GitHub
-------------- | -------------
+----- | ---- | ---- | ----
 Brandon Lacquement | Lead Development | blacquem@asu.edu | @brlacquement
-Content Cell  | Content Cell
+
 
 ##Getting Started/Installation
 **Rent a tool:** Check out the [iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!   
