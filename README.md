@@ -15,9 +15,9 @@
 * Ling Ling: [project role] | [asu.edu email] | [github username]
 
 ##Getting Started/Installation
-######Rent a tool: [Check out the iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!
-######*Administators: visit [this site](http://www.bayley.net/tooltime) and log in.
-######Implementation: Start [here]().
+**Rent a tool:** [Check out the iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!
+**Administators:** visit [this site](http://www.bayley.net/tooltime) and log in.
+**Implementation:** Start [here]().
 
 ##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.png?label=ready&title=Ready)](https://waffle.io/asu-cis-capstone/tooltime)
 - Obtain a Mac and prep for iOS development
@@ -30,3 +30,4 @@
 
 ##Release Notes
 **V0.1**: Initial repository, waffle.io integration, visual mockups
+**V0.2**: *In Development*
