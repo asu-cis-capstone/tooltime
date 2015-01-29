@@ -10,13 +10,13 @@
 ##Collaborators
 <img src="https://cloud.githubusercontent.com/assets/10656205/5954367/a5317e24-a753-11e4-96c4-29c001a64856.png" height=206 align="right">
 
-Name  | Role | Email | GitHub
+Name  | Role | ASU Email | GitHub
 ----  | ---- | ----  | ----
-Brandon Lacquement | Lead Development | blacquem@asu.edu | @brlacquement
-Jin Lim | [project role] | [asu.edu email] | @jlim22
-Taylor Reigel | [project role] | [asu.edu email] | @treigel
-Derrick Kearney | [project role] | [asu.edu email] | [github username]
-Ling Ling | [project role] | [asu.edu email] | @conduongxua
+Brandon Lacquement | Lead Development | blacquem | @brlacquement
+Jin Lim | [role] | [email] | @jlim22
+Taylor Reigel | [role] | [email] | @treigel
+Derrick Kearney | [role] | [email] | [github username]
+Ling Ling | [role] | [email] | @conduongxua
 
 ##Getting Started/Installation
 **Rent a tool:** Check out the [iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!   
