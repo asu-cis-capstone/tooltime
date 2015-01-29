@@ -13,10 +13,10 @@
 Name  | Role | Email | GitHub
 ----  | ---- | ----  | ----
 Brandon Lacquement | Lead Development | blacquem@asu.edu | @brlacquement
-Jin Lim: [project role] | [asu.edu email] | @jlim22
-Taylor Reigel: [project role] | [asu.edu email] | @treigel
-Derrick Kearney: [project role] | [asu.edu email] | [github username]
-Ling Ling: [project role] | [asu.edu email] | @conduongxua
+Jin Lim | [project role] | [asu.edu email] | @jlim22
+Taylor Reigel | [project role] | [asu.edu email] | @treigel
+Derrick Kearney | [project role] | [asu.edu email] | [github username]
+Ling Ling | [project role] | [asu.edu email] | @conduongxua
 
 ##Getting Started/Installation
 **Rent a tool:** Check out the [iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!   
