@@ -12,7 +12,7 @@
 * Brandon Lacquement: Lead Development | @brlacquement
 * Jin Lim: [project role] | @jlim22
 * Taylor Reigel: [project role] | @treigel
-* Derrick Kearney: [project role] | [github username]
+* Derrick Kearney: [project role] | @dtkearney
 * Ling Ling: [project role] | @conduongxua
 
 ##Getting Started/Installation
