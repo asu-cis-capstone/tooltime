@@ -9,7 +9,7 @@
 
 ##Collaborators
 <img src="https://cloud.githubusercontent.com/assets/10656205/5954367/a5317e24-a753-11e4-96c4-29c001a64856.png" height=206 align="right">
-* Brandon Lacquement: Front/Back-End Development | blacquem@asu.edu | @brlacquement
+* Brandon Lacquement: Lead Development | blacquem@asu.edu | @brlacquement
 * Jin Lim: [project role] | [asu.edu email] | [github username]
 * Taylor Reigel: [project role] | [asu.edu email] | [github username]
 * Derrick Kearney: [project role] | [asu.edu email] | [github username]
