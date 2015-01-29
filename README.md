@@ -31,5 +31,5 @@
 - Android app?
 
 ##Release Notes
-**V0.1**: Initial repository, waffle.io integration, visual mockups
+**V0.1**: Initial repository, waffle.io integration, visual mockups   
 **V0.2**: *In Development*
