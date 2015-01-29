@@ -25,10 +25,10 @@
 - Obtain a Mac and prep for iOS development
 - Develop iOS app
 - Create web tool for admins
-- Implement cloud-based DB
+- Implement cloud-based DB   
 ####Far
 - GPS tracking app functionality
-- Security features
+- Security features   
 ####Wherever you are
 - Android app?
 
