@@ -33,5 +33,6 @@
 **V0.1**: 
 * Initial repository 
 * waffle.io integration 
-* Visual mockups      
+* Visual mockups
+
 **V0.2**: *In Development*
