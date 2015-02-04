@@ -16,6 +16,7 @@
 * Ling Ling: [project role] | @conduongxua
 
 ##Getting Started/Installation
+[![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/brlacquement/tooltime)
 **Rent a tool:** Check out the [iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!   
 **Administators:** visit [this site](http://www.bayley.net/tooltime) and log in.   
 **Implementation:** Start [here](https://github.com/asu-cis-capstone/tooltime/blob/master/INSTALL.md).
