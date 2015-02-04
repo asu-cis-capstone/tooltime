@@ -1,0 +1,13 @@
+body {
+	margin:			1em;
+}
+
+body img {
+	margin: 		0px auto;
+	display:		block
+}
+
+body h1,h2 {
+	margin: 		0px auto;
+	text-align:		center;
+}
