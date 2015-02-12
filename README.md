@@ -44,3 +44,4 @@ Generally, during development, our team works on local WAMP servers to test new 
 * Established temp database (to change)
 * Basic database connectivity to web page (time stamp)
 * Updated INSTALL.md
+* Revised mockups
