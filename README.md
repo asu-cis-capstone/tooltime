@@ -37,4 +37,5 @@
 * Basic navigation bar and header
 * Basic site structure and flow
 * Obtained web hosting
-*
+* Established temp database (to change)
+* Basic database connectivity to web page (time stamp)
