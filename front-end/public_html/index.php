@@ -85,10 +85,10 @@ Spring 2015
 							rental history, and manage tool inventory.
 						</p>
 
-						<p>
+						<p id="timestamp">
 							<?php
-								date_default_timezone_set('America/Chicago');
-								$current_date = date('d/m/Y == H:i:s');
+								date_default_timezone_set('America/Phoenix');
+								$current_date = date('d/m/Y - H:i:s');
 								echo $current_date; 
 							?>
 						</p>

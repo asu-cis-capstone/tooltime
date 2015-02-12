@@ -2,6 +2,10 @@ body {
 	margin:			1em;
 }
 
+#timestamp{
+	color:			red;
+}
+
 body img {
 	margin: 		0px auto;
 	display:		block
