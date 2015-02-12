@@ -36,6 +36,7 @@
 * Design revisions - shift to mobile web development
 * Basic navigation bar and header
 * Basic site structure and flow
-* Obtained web hosting
+* Obtained web hosting (GoDaddy)
 * Established temp database (to change)
 * Basic database connectivity to web page (time stamp)
+* Updated INSTALL.md
