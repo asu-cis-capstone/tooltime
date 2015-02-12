@@ -10,10 +10,10 @@
 ##Collaborators
 <img src="https://cloud.githubusercontent.com/assets/10656205/5954367/a5317e24-a753-11e4-96c4-29c001a64856.png" height=206 align="right">
 * Brandon Lacquement: Lead Development | @brlacquement
-* Jin Lim: [project role] | @jlim22
-* Taylor Reigel: [project role] | @treigel
-* Derrick Kearney: [project role] | @dtkearney
-* Ling Ling: [project role] | @conduongxua
+* Jin Lim: Database Management | @jlim22
+* Taylor Reigel: Design Vision | @treigel
+* Derrick Kearney: Styling | @dtkearney
+* Ling Ling: Database Management | @conduongxua
 
 ##Getting Started/Installation [![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/brlacquement/tooltime)
 **Rent a tool:** Check out the [iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!   
