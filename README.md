@@ -21,13 +21,10 @@
 **Implementation:** Start [here](https://github.com/asu-cis-capstone/tooltime/blob/master/INSTALL.md).
 
 ##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.svg?label=ready&title=Ready)](http://waffle.io/asu-cis-capstone/tooltime)
-- Obtain a Mac and prep for iOS development
-- Develop iOS app
-- Create web tool for admins
-- Implement cloud-based DB   
-- GPS tracking app functionality
-- Security features   
-- Android app?
+- Develop rental web app
+- Clone login database
+- Clone tool database
+- Develop admin functionality
 
 ##Release Notes
 **V0.1**:   
@@ -35,4 +32,9 @@
 * waffle.io integration 
 * Visual mockups
 
-**V0.2**: *In Development*
+**V0.2**:
+* Design revisions - shift to mobile web development
+* Basic navigation bar and header
+* Basic site structure and flow
+* Obtained web hosting
+*
