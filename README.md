@@ -16,8 +16,8 @@
 * Derrick Kearney: Styling | @dtkearney
 
 ##Getting Started/Installation [![Stack Share](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/brlacquement/tooltime)
-**Rent a tool:** Check out the [iOS app](https://itunes.apple.com/us/genre/ios/id36?mt=8)!   
-**Administators:** visit [this site](http://www.bayley.net/tooltime) and log in.   
+**Rent a tool:** Check out the [mobile site](http://www.bayleytools.net)!   
+**Administators:** visit [this site](http://www.bayleytools.net/admin.htm) and log in.   
 **Implementation:** Start [here](https://github.com/asu-cis-capstone/tooltime/blob/master/INSTALL.md).
 
 ##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.svg?label=ready&title=Ready)](http://waffle.io/asu-cis-capstone/tooltime)
