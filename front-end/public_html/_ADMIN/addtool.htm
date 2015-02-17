@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!--
+ToolTime
+Add Tool Page
+CIS 440
+Spring 2015
+-->
+
+<html>
+	<head>
+		<title>ToolTime: Add Tool</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link href = "css/bootstrap.min.css" rel = "stylesheet">
+		<link href = "css/style.css" rel = "stylesheet">
+		<script src ="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src = "js/bootstrap.js"></script>
+		<script src = "js/navbar.js"></script>
+		<script src = "http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.js"></script>
+		<script src = "http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.css"></script>
+		<link rel="icon" href="images/favicon.ico" />
+	</head>
+	
+	<body>
+	<div id="wrapper">
+        <div class="overlay"></div>
+    
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li>
+                    <a href="index.php">HOME</a>
+                </li>
+                <li>
+                    <a href="history.htm">HISTORY</a>
+                </li>
+				<li>
+                    <a href="admin.htm">ADMIN</a>
+                </li>
+                <li>
+                    <a href="login.htm">LOGOUT</a> <!-- will actually go to a process php page -->
+                </li>
+                <li>
+                    <a href="feedback.htm">FEEDBACK</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        
+		<img src = "images/longlogo.png" class="img-responsive" alt = "Logo" id ="headerimg">
+			
+		<div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+    			<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+            </button>
+			
+			<div class="row">
+			</div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2"> 
+						<p>
+							This page will be an admin only feature that will enable a power user to 
+							add a tool to the database. 
+						</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+		
+	</body>
+</html>
