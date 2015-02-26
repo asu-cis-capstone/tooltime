@@ -44,7 +44,7 @@ Generally, during development, our team works on the site live with a continuous
 * Basic database connectivity to web page (time stamp)
 * Updated INSTALL.md
 * Revised mockups
-* 
+
 **V0.3**
 * Restructure database
 * Add a tool functioning
