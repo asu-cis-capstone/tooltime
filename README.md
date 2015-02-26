@@ -22,13 +22,12 @@
 
 ToolTime is hosted throgh GoDaddy on a web domain paired with a MySQL server (version 5.5.4-cll-lve GPL). We are developing on PHP version 5.5.12 and run our local testing through WAMPSERVER 2.5 with Apache 2.4.9. We are using HTML5 and CSS3 for content and style. In addition to this, we are utilizing CakePHP 2.6.1 for a PHP script library and Bootstrap 3.3.2 for mobile-first web styling. We plan to utilize the jQuery, jQuery UI, and jQuery Mobile script libraries to implement some functionality in the future - these versions will be listed once implemented. Our GoDaddy server is hosted via a UNIX socket in a 64-bit environment. 
 
-Generally, during development, our team works on local WAMP servers to test new features. We then use FTP to move updated files to our website's root directory. We then perform further testing in the server environment. Finally, we notify the team of our work and push changes to the git repo.
+Generally, during development, our team works on the site live with a continuous deployment approach. We then use FTP to move updated files to our GitHub repo during version releases. Some scripting is troublehshooted offline in a WAMP server.
 
 ##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.svg?label=ready&title=Ready)](http://waffle.io/asu-cis-capstone/tooltime)
-- Develop rental web app
-- Clone login database
-- Clone tool database
-- Develop admin functionality
+- Form field validation
+- Geotagging during transactions
+- Security features
 
 ##Release Notes
 **V0.1**:   
@@ -45,3 +44,14 @@ Generally, during development, our team works on local WAMP servers to test new 
 * Basic database connectivity to web page (time stamp)
 * Updated INSTALL.md
 * Revised mockups
+* 
+**V0.3**
+* Restructure database
+* Add a tool functioning
+* Add a user functioning
+* Login functionality (Sha256 w/salt)
+* Mockup flow of check-in/out function
+* Updated images and style
+* Updated mockups
+* Updated back-end folder with SQL export
+* Updated install and readme files
