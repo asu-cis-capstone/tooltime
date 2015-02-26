@@ -1,0 +1,1 @@
+[21-Feb-2015 23:39:19 UTC] PHP Fatal error:  Call to undefined function create_hash() in /home/brlacquement/public_html/process.php on line 12

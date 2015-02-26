@@ -1,6 +1,6 @@
 <?php
 	// Start a php session
-	include('_CONNECT/server-connect.php');
+	include('../_CONNECT/server-connect.php');
 	
 	// Start a php session
 	session_name("employee");
@@ -9,16 +9,17 @@
 	//Check to see if user is not logged in
 	if(!isset($_SESSION['employee']))
 	{
-		header("Location: login.php");
+		header("Location: ../login.php");
 		exit;
 	}
 ?>
+
 
 <!DOCTYPE html>
 
 <!--
 ToolTime
-index.php
+toolcheckin.php (TOOL CHECK IN)
 CIS 440
 Spring 2015
 -->
@@ -26,7 +27,7 @@ Spring 2015
 <html>
 	<head>
 		<!--TITLE-->
-			<title>ToolTime: Home</title>
+			<title>ToolTime: Check-In</title>
 		
 		<!--REQ FOR RESPONSIVE BOOTSTRAP-->
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -45,19 +46,19 @@ Spring 2015
 			<!--JS 1.11.3-->	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 		
 		<!--LOCAL CSS LINKS-->
-			<!--BOOTSTRAP-->	<link 	href = "css/bootstrap.min.css" rel = "stylesheet">
-			<!--OVERWRITE-->	<link 	href = "css/style.css" rel = "stylesheet">
+			<!--BOOTSTRAP-->	<link 	href = "../css/bootstrap.min.css" rel = "stylesheet">
+			<!--OVERWRITE-->	<link 	href = "../css/style.css" rel = "stylesheet">
 		
 		<!--LOCAL SCRIPT LINKS-->
-			<!--BOOTSTRAP-->	<script src = "js/bootstrap.js"></script>
-			<!--NAVBAR-->		<script src = "js/navbar.js"></script>
-			<!--JQUERY-->		<script src = "js/jquery-2.1.3.js"></script>
+			<!--BOOTSTRAP-->	<script src = "../js/bootstrap.js"></script>
+			<!--NAVBAR-->		<script src = "../js/navbar.js"></script>
+			<!--JQUERY-->		<script src = "../js/jquery-2.1.3.js"></script>
 		
 		<!--LOCAL CAKEPHP LINKS-->
 			<!---->
 		
 		<!--LOCAL FAVICON LINK-->
-			<link rel="icon" href="images/favicon.ico" />	
+			<link rel="icon" href="images/favicon.ico" />			
 	</head>
 	
 	<body>
@@ -76,8 +77,7 @@ Spring 2015
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </button>
-						  <a class="navbar-brand" href="index.php
-						  ">
+						  <a class="navbar-brand" href="index.php">
 						  <img src = "images/longlogo.png" id="headerimg" alt = "Logo">
 						  </a>  
 						</div>
@@ -118,57 +118,35 @@ Spring 2015
 								<li><a href="#">Account Info</a></li>
 								<li><a href="#">Rental History</a></li>
 								<li class="divider"></li>
-								<li><a href="../logout.php">Sign Out</a></li>
+								<li><a href="logout.php">Sign Out</a></li>
 							  </ul>
 							</li>
 						  </ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
 				</nav>
-				<div class="container contain">
+				
+				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2">
+							<ol class="breadcrumb breadcrumb-color">
+								<li><a href="index.php">Home</a></li>
+								<li class="active">Tool Check-In</li>
+							</ol>
+							
 							<div class="row">
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=power" class="thumbnail">
-										 <img src="images/power.jpg" class="img-responsive" id="test1" alt="test">
-									</a>
-								</div>
-								 <div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=hand" class="thumbnail">
-										 <img src="images/hand.jpg" class="img-responsive" id="test2" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=office" class="thumbnail">
-										 <img src="images/office.png" class="img-responsive" id="test3" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=lift" class="thumbnail pull-left">
-										 <img src="images/lift.png" class="img-responsive" id="test4" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=safety" class="thumbnail">
-										 <img src="images/safety.png" class="img-responsive" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=traffic" class="thumbnail">
-										 <img src="images/traffic.jpg" class="img-responsive" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=clean" class="thumbnail">
-										 <img src="images/clean.jpg" class="img-responsive" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=misc" class="thumbnail">
-										 <img src="images/misc.jpg" class="img-responsive" alt="test">
-									</a>
-								</div>
+							<!-- ADD PHP LOOP HERE -->
+							<?
+								while($x <= 19) {
+									echo '<div class="col-lg-3 col-sm-4 col-xs-6">
+										<a href="confirmcheckin.php?tool=' . 'tool' . $x . '" class="thumbnail">
+											 <p class="text-center">Tool ' .  $x . '</p>
+										</a>
+									</div>';
+									$x++;
+								}
+							?>
+							<!-- END PHP LOOP -->
 							</div>
 							<footer class="footer">
 								<div class="container-fluid">

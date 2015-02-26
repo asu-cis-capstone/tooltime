@@ -1,0 +1,2 @@
+[21-Feb-2015 23:02:15 UTC] PHP Fatal error:  Call to undefined function create_hash() in /home/brlacquement/public_html/_ADMIN/adduser.php on line 24
+[21-Feb-2015 23:03:04 UTC] PHP Fatal error:  Call to undefined function create_hash() in /home/brlacquement/public_html/_ADMIN/adduser.php on line 24

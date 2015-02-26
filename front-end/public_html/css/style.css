@@ -1,14 +1,43 @@
 body {
-	margin:			1em;
+	background-color:	#f8f8f8;
+	color:				black;
 }
+
+/*.footer {
+	background-color:	white;
+	color:				black;
+	border:				1px solid #dddddd;
+	padding:			5px;
+}*/
 
 #timestamp{
 	color:			red;
 }
+.breadcrumb {
+	background-color:	white;
+	margin-top:		70px;
+	color:			black;
+}
+
+.contain {
+margin-top:		70px;
+}
+
+.container-mid {
+  margin-right: 30px;
+  margin-left: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.breadcrumb-color{
+	color:				black;
+	border:				1px solid #dddddd;
+}
 
 body img {
 	margin: 		0px auto;
-	display:		block
+	display:		block;
 }
 
 body h1,h2 {
@@ -17,16 +46,48 @@ body h1,h2 {
 }
 
 #headerimg{
-	width:	33%;
-	max-width:	200px;
-	position:	fixed;
-	padding-top:	57px;
-	left:	50%;
-	transform:	translate(-50%, -50%);
-	
+	height:		28px;
 }
 
 /* NAVBAR */
+.navbarcolor{
+	background-color:	white;
+	color:				black;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: black;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: black;
+}
+
+.form-control:focus {
+  border-color: #A58541;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(165, 133, 65, 0.6);
+}
+
+.thumbnail:hover {
+  border-color: #A58541;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(165, 133, 65, 0.6);
+}
+
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+  border-color: #A58541;
+}
+
+.btn-color:hover {background-color: #A58541;}
+
+.nav > li:hover	{background-color:	#A58541;}
+.nav > li:active	{color:		black;}
+
 body {
     position: relative;
     overflow-x: hidden;
@@ -42,7 +103,6 @@ html { height: 100%;}
 /*-------------------------------*/
 
 #wrapper {
-    padding-left: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -78,7 +138,28 @@ html { height: 100%;}
 
 #page-content-wrapper {
     width: 100%;
-    padding-top: 70px;
+}
+
+/*#page-content-wrapper-mid {
+    width: 33%;
+	left: 50;
+	position: fixed;
+	right: 50;
+	transform: translate(50%, 10%);
+}*/
+
+.jumbotron-set{
+	background-color:	white;
+	border:				1px solid #dddddd;
+	margin-top:			20px;
+	max-width:			400px;
+}
+
+.jumbotron-register{
+	background-color:	white;
+	border:				1px solid #dddddd;
+	margin-top:			20px;
+	padding:			20px;
 }
 
 #wrapper.toggled #page-content-wrapper {

@@ -18,7 +18,7 @@
 
 <!--
 ToolTime
-index.php
+category.php
 CIS 440
 Spring 2015
 -->
@@ -26,7 +26,7 @@ Spring 2015
 <html>
 	<head>
 		<!--TITLE-->
-			<title>ToolTime: Home</title>
+			<title>ToolTime: <? echo $_GET['category'];?></title>
 		
 		<!--REQ FOR RESPONSIVE BOOTSTRAP-->
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -125,59 +125,37 @@ Spring 2015
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
 				</nav>
-				<div class="container contain">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<div class="row">
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=power" class="thumbnail">
-										 <img src="images/power.jpg" class="img-responsive" id="test1" alt="test">
-									</a>
-								</div>
-								 <div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=hand" class="thumbnail">
-										 <img src="images/hand.jpg" class="img-responsive" id="test2" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=office" class="thumbnail">
-										 <img src="images/office.png" class="img-responsive" id="test3" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=lift" class="thumbnail pull-left">
-										 <img src="images/lift.png" class="img-responsive" id="test4" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=safety" class="thumbnail">
-										 <img src="images/safety.png" class="img-responsive" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=traffic" class="thumbnail">
-										 <img src="images/traffic.jpg" class="img-responsive" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=clean" class="thumbnail">
-										 <img src="images/clean.jpg" class="img-responsive" alt="test">
-									</a>
-								</div>
-								<div class="col-lg-3 col-sm-4 col-xs-6">
-									<a href="category.php?category=misc" class="thumbnail">
-										 <img src="images/misc.jpg" class="img-responsive" alt="test">
-									</a>
-								</div>
+				
+				<div class="container">
+					<div class="col-lg-8 col-lg-offset-2">
+						<ol class="breadcrumb breadcrumb-color">
+							<li><a href="../index.php">Home</a></li>
+							<li class="active"><? echo 'Rentals: ' . $_GET['category']; ?></li>
+						</ol>
+						
+						<div class="row">
+							<!-- ADD PHP LOOP HERE -->
+							<?
+								while($x <= 19) {
+									echo '<div class="col-lg-3 col-sm-4 col-xs-6">
+										<a href="checkout.php?tool=' . $_GET['category'] . $x . '" class="thumbnail">
+											 <p class="text-center">' . $_GET['category'] . $x . '</p>
+										</a>
+									</div>';
+									$x++;
+								}
+							?>
+							<!-- END PHP LOOP -->
 							</div>
 							<footer class="footer">
 								<div class="container-fluid">
 									<p class="text-center">Bayley Construction &copy; 2015</p>
 								</div>
 							</footer>
-						</div>
+						
 					</div>
 				</div>
+				
 			</div>
 			<!--/PAGE CONTENT WRAPPER-->
 		</div>
