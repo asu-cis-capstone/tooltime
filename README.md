@@ -55,3 +55,6 @@ Generally, during development, our team works on the site live with a continuous
 * Updated mockups
 * Updated back-end folder with SQL export
 * Updated install and readme files
+
+**V0.4**
+* See out video at http://youtu.be/FUd0Qv5si7o
