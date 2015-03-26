@@ -93,9 +93,9 @@ Spring 2015
 									echo '<li class="dropdown">
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Panel <span class="caret"></span></a>
 									  <ul class="dropdown-menu" role="menu">
-										<li><a href="#">Add Tools</a></li>
-										<li><a href="#">Remove Tools</a></li>
-										<li><a href="#">Edit a Tool</a></li>
+										<li><a href="registertool.php">Add Tools</a></li>
+										<li><a href="removetool.php">Remove Tools</a></li>
+										<li><a href="editselect.php">Edit a Tool</a></li>
 										<li class="divider"></li>
 										<li><a href="#">Reporting</a></li>
 										<li class="divider"></li>
@@ -186,9 +186,9 @@ Spring 2015
 									<label for ="location">Location</label>
 									<select name="location" class="form-control" value="" id="location" required>
 										<option value="">Select...</option>
-										<option value="az">AZ</option>
-										<option value="ca">CA</option>
-										<option value="wa">WA</option>
+										<option value="Phoenix">Phoenix</option>
+										<option value="Seattle">Seattle</option>
+										<option value="LA">LA</option>
 									</select>
 								</div>			
 								

@@ -1,3 +1,0 @@
-[submodule "front-end/public_html/cakephp"]
-	path = front-end/public_html/cakephp
-	url = git://github.com/cakephp/cakephp.git

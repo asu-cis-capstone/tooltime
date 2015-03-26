@@ -1,1 +1,4 @@
 [21-Feb-2015 23:39:19 UTC] PHP Fatal error:  Call to undefined function create_hash() in /home/brlacquement/public_html/process.php on line 12
+[26-Mar-2015 08:19:47 UTC] PHP Fatal error:  Call to undefined function msqli_query() in /home/brlacquement/public_html/toolcheckin.php on line 144
+[26-Mar-2015 08:48:05 UTC] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/brlacquement/public_html/processcheckin.php on line 32
+[26-Mar-2015 08:51:01 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/brlacquement/public_html/processcheckin.php on line 37

@@ -12,6 +12,8 @@
 		header("Location: ../login.php");
 		exit;
 	}
+	
+	$_SESSION['tool'] = $_GET['tool'];
 ?>
 
 
@@ -93,13 +95,13 @@ Spring 2015
 									echo '<li class="dropdown">
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Panel <span class="caret"></span></a>
 									  <ul class="dropdown-menu" role="menu">
-										<li><a href="registertool.php">Add Tools</a></li>
-										<li><a href="#">Remove Tools</a></li>
-										<li><a href="#">Edit a Tool</a></li>
+										<li><a href="_ADMIN/registertool.php">Add Tools</a></li>
+										<li><a href="_ADMIN/removetool.php">Remove Tools</a></li>
+										<li><a href="_ADMIN/editselect.php">Edit a Tool</a></li>
 										<li class="divider"></li>
 										<li><a href="#">Reporting</a></li>
 										<li class="divider"></li>
-										<li><a href="register.php">Add A User</a></li>
+										<li><a href="_ADMIN/register.php">Add A User</a></li>
 									  </ul>
 									</li>';
 								}
@@ -134,9 +136,9 @@ Spring 2015
 						</ol>
 						
 						<div class="jumbotron jumbotron-register center-block">
-							<form action="index.php?rc=0" method="post">
+							<form action="processcheckout.php" method="post">
 								<h3 class="dark-grey">Rental Information</h3>
-								<h3 style="color: red;"><? echo $_GET['tool']; ?></h3>
+								<h3 style="color: red;"><? echo $_GET['name']; ?></h3>
 																	
 								<div class="form-group col-lg-6">
 									<label>Job #:</label>
@@ -145,7 +147,7 @@ Spring 2015
 								
 								<div class="form-group col-lg-6">
 									<label>Cost Code:</label>
-									<input type="costcode" name="title" class="form-control" id="costcode" value="" required>
+									<input type="costcode" name="costcode" class="form-control" id="costcode" value="" required>
 								</div>
 			
 								<div class="form-group">

@@ -19,7 +19,7 @@
 
 <!--
 ToolTime
-register.php (USER)
+edit.php (TOOL)
 CIS 440
 Spring 2015
 -->
@@ -27,7 +27,7 @@ Spring 2015
 <html>
 	<head>
 		<!--TITLE-->
-			<title>ToolTime: Add User</title>
+			<title>ToolTime: Edit Tool</title>
 		
 		<!--REQ FOR RESPONSIVE BOOTSTRAP-->
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -58,7 +58,7 @@ Spring 2015
 			<!---->
 		
 		<!--LOCAL FAVICON LINK-->
-			<link rel="icon" href="../images/favicon.ico" />	
+			<link rel="icon" href="../images/favicon.ico" />			
 	</head>
 	
 	<body>
@@ -130,45 +130,90 @@ Spring 2015
 					<div class="col-lg-8 col-lg-offset-2">
 						<ol class="breadcrumb breadcrumb-color">
 							<li><a href="../index.php">Home</a></li>
-							<li class="active">Admin: Add User</li>
+							<li class="active">Admin: Edit Tool</li>
 						</ol>
 						
+						<?
+							$tool_id = $_POST['bercoid'];
+							//echo $tool_id;
+							$query = "SELECT * FROM tools WHERE bayleyID = '$tool_id'";
+							echo $query;
+							$result = mysqli_query($dbc,$query);
+							$row = $result->fetch_array();
+							
+							$BERCOID = $row['bayleyID'];
+							$CATEGORY = $row['category'];
+							$NAME = $row['name'];
+							$DP = $row['dailyPrice'];
+							$WP = $row['weeklyPrice'];
+							$MP = $row['monthlyPrice'];
+							$VALUE = $row['toolValue'];
+							$LOCATION = $row['location'];
+							
+							echo $BERCOID . $CATEGORY . $NAME . $DP . $WP . $MP . $VALUE . $LOCATION;			
+						?>
+						
 						<div class="jumbotron jumbotron-register center-block">
-							<form action="adduser.php" method="post">
-								<h3 class="dark-grey">User Registration</h3>
-																	
+							<form action="editprocess.php" method="post">
+								<h3 class="dark-grey">Edit: <? echo $NAME;?></h3>
+												
 								<div class="form-group col-lg-6">
-									<label>Email Address</label>
-									<input type="email" name="email" class="form-control" id="email" value="" required autofocus>
+									<label>BERCO ID#</label>
+									<input type="text" name="bercoid" class="form-control" id="bercoid" value="<? echo $BERCOID;?>" required autofocus readonly>
 								</div>
 								
 								<div class="form-group col-lg-6">
-									<label>Title</label>
-									<input type="text" name="title" class="form-control" id="title" value="" required>
+									<label for ="category">Category</label>
+									<select name="category" class="form-control" value="" id="category" required>
+										<option value="">Select...</option>
+										<option <? if($CATEGORY=='Power Tools'){echo 'selected';} ?> value="powertool">Power Tool</option>
+										<option <? if($CATEGORY=='Hand Tools'){echo 'selected';} ?> value="handtool">Hand Tool</option>
+										<option <? if($CATEGORY=='Office'){echo 'selected';} ?> value="office">Office</option>
+										<option <? if($CATEGORY=='Lifts'){echo 'selected';} ?> value="lift">Lift</option>
+										<option <? if($CATEGORY=='Safety'){echo 'selected';} ?> value="safety">Safety</option>
+										<option <? if($CATEGORY=='Traffic'){echo 'selected';} ?> value="traffic">Traffic</option>
+										<option <? if($CATEGORY=='Cleaning'){echo 'selected';} ?> value="cleaning">Cleaning</option>
+										<option <? if($CATEGORY=='Other'){echo 'selected';} ?> value="Other">Other</option>
+									</select>
 								</div>
 								
 								<div class="form-group col-lg-6">
-									<label>First Name</label>
-									<input type="text" name="firstname" class="form-control" id="firstname" value="" required>
+									<label>Name</label>
+									<input type="text" name="name" class="form-control" id="name" value="<? echo $NAME; ?>" required>
 								</div>
 								
 								<div class="form-group col-lg-6">
-									<label>Last Name</label>
-									<input type="text" name="lastname" class="form-control" id="lastname" value="" required>
+									<label>Daily Price</label>
+									<input type="text" name="dailyprice" class="form-control" id="dailyprice" value="<? echo $DP; ?>" required>
 								</div>
 								
 								<div class="form-group col-lg-6">
-									<label>Password</label>
-									<input type="password" name="password" class="form-control" id="password" value="" required>
+									<label>Weekly Price</label>
+									<input type="text" name="weeklyprice" class="form-control" id="weeklyprice" value="<? echo $WP; ?>" required>
+								</div>		
+								
+								<div class="form-group col-lg-6">
+									<label>Monthly Price</label>
+									<input type="text" name="monthlyprice" class="form-control" id="monthlyprice" value="<? echo $MP; ?>" required>
 								</div>
 								
 								<div class="form-group col-lg-6">
-									<label>Repeat Password</label>
-									<input type="password" name="rpassword" class="form-control" id="rpassword" value="" required>
-								</div>
-			
+									<label>Tool Value</label>
+									<input type="text" name="toolvalue" class="form-control" id="toolvalue" value="<? echo $VALUE; ?>" required>
+								</div>	
+								
+								<div class="form-group col-lg-6">
+									<label for ="location">Location</label>
+									<select name="location" class="form-control" value="" id="location" required>
+										<option value="">Select...</option>
+										<option <? if($LOCATION=='Phoenix'){echo 'selected';} ?> value="Phoenix">Phoenix</option>
+										<option <? if($LOCATION=='Seattle'){echo 'selected';} ?> value="Seattle">Seattle</option>
+										<option <? if($LOCATION=='LA'){echo 'selected';} ?> value="LA">LA</option>
+									</select>
+								</div>			
+								
 								<div class="form-group">
-									<button type="submit" class="btn btn-primary center-block">Register</button>		
+									<button type="submit" class="btn btn-primary center-block alert-info">Update</button>		
 								</div>	
 							</form>
 						</div>

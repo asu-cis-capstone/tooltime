@@ -1,6 +1,6 @@
 <?php
 	// Start a php session
-	include('_CONNECT/server-connect.php');
+	include('../_CONNECT/server-connect.php');
 	
 	// Start a php session
 	session_name("employee");
@@ -19,7 +19,7 @@
 
 <!--
 ToolTime
-toolcheckin.php (TOOL CHECK IN)
+editselect.php (TOOL)
 CIS 440
 Spring 2015
 -->
@@ -27,7 +27,7 @@ Spring 2015
 <html>
 	<head>
 		<!--TITLE-->
-			<title>ToolTime: Check-In</title>
+			<title>ToolTime: Edit Tool</title>
 		
 		<!--REQ FOR RESPONSIVE BOOTSTRAP-->
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -58,7 +58,7 @@ Spring 2015
 			<!---->
 		
 		<!--LOCAL FAVICON LINK-->
-			<link rel="icon" href="images/favicon.ico" />			
+			<link rel="icon" href="../images/favicon.ico" />			
 	</head>
 	
 	<body>
@@ -77,15 +77,15 @@ Spring 2015
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </button>
-						  <a class="navbar-brand" href="index.php">
-						  <img src = "images/longlogo.png" id="headerimg" alt = "Logo">
+						  <a class="navbar-brand" href="../index.php">
+						  <img src = "../images/longlogo.png" id="headerimg" alt = "Logo">
 						  </a>  
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						  <ul class="nav navbar-nav">
-							<li class="fix"><a href="toolcheckin.php">Tool Check-In <span class="sr-only">(current)</span></a></li>
+							<li class="fix"><a href="../toolcheckin.php">Tool Check-In <span class="sr-only">(current)</span></a></li>
 							<!--<li><a href="#">Link</a></li>-->
 							<?
 								if($_SESSION['title'] == "Admin")
@@ -93,13 +93,13 @@ Spring 2015
 									echo '<li class="dropdown">
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Panel <span class="caret"></span></a>
 									  <ul class="dropdown-menu" role="menu">
-										<li><a href="_ADMIN/registertool.php">Add Tools</a></li>
-										<li><a href="_ADMIN/removetool.php">Remove Tools</a></li>
-										<li><a href="_ADMIN/editselect.php">Edit a Tool</a></li>
+										<li><a href="registertool.php">Add Tools</a></li>
+										<li><a href="removetool.php">Remove Tools</a></li>
+										<li><a href="editselect.php">Edit a Tool</a></li>
 										<li class="divider"></li>
 										<li><a href="#">Reporting</a></li>
 										<li class="divider"></li>
-										<li><a href="_ADMIN/register.php">Add A User</a></li>
+										<li><a href="register.php">Add A User</a></li>
 									  </ul>
 									</li>';
 								}
@@ -118,7 +118,7 @@ Spring 2015
 								<li><a href="#">Account Info</a></li>
 								<li><a href="#">Rental History</a></li>
 								<li class="divider"></li>
-								<li><a href="logout.php">Sign Out</a></li>
+								<li><a href="../logout.php">Sign Out</a></li>
 							  </ul>
 							</li>
 						  </ul>
@@ -127,39 +127,29 @@ Spring 2015
 				</nav>
 				
 				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<ol class="breadcrumb breadcrumb-color">
-								<li><a href="index.php">Home</a></li>
-								<li class="active">Tool Check-In</li>
-							</ol>
-							
-							<div class="row">
-							<!-- ADD PHP LOOP HERE -->
-							<?
-								//1. Query DB to find all tools checked out for THIS employee
-								$id = $_SESSION['id'];
-								$query = "SELECT tool_id,tools.name FROM trans_log,tools WHERE trans_log.employee_id = '$id' AND trans_log.type = 'out' AND tools.status = 'out' AND tools.toolID = trans_log.tool_id ORDER BY timestamp";
-								$result = mysqli_query($dbc, $query)or die('Death at out-tool grab');
+					<div class="col-lg-8 col-lg-offset-2">
+						<ol class="breadcrumb breadcrumb-color">
+							<li><a href="../index.php">Home</a></li>
+							<li class="active">Admin: Edit Tool</li>
+						</ol>
+						
+						<div class="jumbotron jumbotron-register center-block">
+							<form action="edit.php" method="post">
+								<h3 class="dark-grey">Edit Tool</h3>
+												
+								<div class="form-group col-lg-6" style="width: 100%;">
+									<label>BERCO ID#</label>
+									<input type="text" name="bercoid" class="form-control" id="bercoid" value="" required autofocus>
+								</div>			
 								
-								//2. Print out results (similar to sample loop)
-								while($row = $result->fetch_array()) {
-									echo '<div class="col-lg-3 col-sm-4 col-xs-6">
-										<a href="confirmcheckin.php?tool=' . $row['tool_id'] . '&name=' . $row['name'] . '" class="thumbnail">
-											 <p class="text-center">' .  $row['name'] . '</p>
-										</a>
-									</div>';
-								}
-								//3. Pass tool info in head with the href
-			
-							?>
-							<!-- END PHP LOOP -->
-							</div>
-							<footer class="footer">
-								<div class="container-fluid">
-									<p class="text-center">Bayley Construction &copy; 2015</p>
-								</div>
-							</footer>
+								<div class="form-group">
+									<button type="submit" class="btn btn-primary center-block alert-warning">Edit</button>		
+								</div>	
+							</form>
+						</div>
+						
+						<div class="container">
+							<p class="col-lg-8 text-center">Bayley Construction &copy; 2015</p>
 						</div>
 					</div>
 				</div>

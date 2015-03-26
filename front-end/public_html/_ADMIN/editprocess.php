@@ -1,5 +1,5 @@
 <?php
-//ADD TOOL
+//EDIT TOOL
 
 // Connect to DB
 include('../_CONNECT/server-connect.php');
@@ -43,14 +43,12 @@ $status = 'in';
 //echo $bercoid . " " . $category . " " . $name . " " . $dailyprice . " " . $weeklyprice . " " . $monthlyprice . " " . $toolvalue . " " . $status . " " . $location;
 
 // Build SQL statement
-$query =
-	"INSERT INTO tools(bayleyID, category, name, dailyPrice, weeklyPrice, monthlyPrice, toolValue, status, location) VALUES('$bercoid','$category','$name','$dailyprice','$weeklyprice','$monthlyprice','$toolvalue','$status','$location')";
-	
+$query = "UPDATE tools SET category='$category',name='$name',dailyPrice='$dailyprice',weeklyPrice='$weeklyprice',monthlyPrice='$monthlyprice',toolValue='$toolvalue',location='$location' WHERE bayleyID = '$bercoid'";	
 //echo $query;
 //echo $bercoid . " " . $category . " " . $name . " " . $dailyprice . " " . $weeklyprice . " " . $monthlyprice . " " . $toolvalue . " " . $status . " " . $location;
 
 // Run it!
-$result = mysqli_query($dbc, $query) or die('Unable to write to database!');
+$result = mysqli_query($dbc, $query) or die('Unable to update to database!');
 
 // Close connection
 mysqli_close($dbc);

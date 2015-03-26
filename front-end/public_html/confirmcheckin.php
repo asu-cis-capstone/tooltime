@@ -12,6 +12,10 @@
 		header("Location: ../login.php");
 		exit;
 	}
+	
+	//1. Get tool info from head and store in session (escape it)
+	$_SESSION['tool_id'] = $_GET['tool'];
+	$_SESSION['tool_name'] = $_GET['name'];
 ?>
 
 
@@ -93,13 +97,13 @@ Spring 2015
 									echo '<li class="dropdown">
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Panel <span class="caret"></span></a>
 									  <ul class="dropdown-menu" role="menu">
-										<li><a href="registertool.php">Add Tools</a></li>
-										<li><a href="#">Remove Tools</a></li>
-										<li><a href="#">Edit a Tool</a></li>
+										<li><a href="_ADMIN/registertool.php">Add Tools</a></li>
+										<li><a href="_ADMIN/removetool.php">Remove Tools</a></li>
+										<li><a href="_ADMIN/editselect.php">Edit a Tool</a></li>
 										<li class="divider"></li>
 										<li><a href="#">Reporting</a></li>
 										<li class="divider"></li>
-										<li><a href="register.php">Add A User</a></li>
+										<li><a href="_ADMIN/register.php">Add A User</a></li>
 									  </ul>
 									</li>';
 								}
@@ -134,9 +138,9 @@ Spring 2015
 						</ol>
 						
 						<div class="jumbotron jumbotron-register center-block">
-							<form action="index.php?rc=0" method="post">
+							<form action="processcheckin.php" method="post">
 								<h3 class="dark-grey">Rental Information</h3>
-								<h3 style="color: red;">Are you sure you want to return: <? echo $_GET['tool']; ?></h3>
+								<h3 style="color: red;">Are you sure you want to return: <? echo $_SESSION['tool_name']; //2. MAY NEED UPDATED?></h3>
 			
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary center-block">Confirm</button>		

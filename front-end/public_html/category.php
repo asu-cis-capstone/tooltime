@@ -12,6 +12,18 @@
 		header("Location: login.php");
 		exit;
 	}
+	
+	$ocategory = $_GET['category'];
+	$category = mysqli_real_escape_string($dbc, $ocategory);
+	
+	if ($category == 'power')		{ $cat = 'Power Tools';} 						
+	elseif ($category == 'hand') 	{ $cat = 'Hand Tools';}
+	elseif ($category == 'office') 	{ $cat = 'Office';}
+	elseif ($category == 'lift') 	{ $cat = 'Lifts';}
+	elseif ($category == 'safety') 	{ $cat = 'Safety';}
+	elseif ($category == 'traffic') { $cat = 'Traffic';}
+	elseif ($category == 'clean') 	{ $cat = 'Cleaning';}
+	elseif ($category == 'misc') 	{ $cat = 'Other';}
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +38,7 @@ Spring 2015
 <html>
 	<head>
 		<!--TITLE-->
-			<title>ToolTime: <? echo $_GET['category'];?></title>
+			<title>ToolTime: <? echo $cat;?></title>
 		
 		<!--REQ FOR RESPONSIVE BOOTSTRAP-->
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -94,8 +106,8 @@ Spring 2015
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Panel <span class="caret"></span></a>
 									  <ul class="dropdown-menu" role="menu">
 										<li><a href="_ADMIN/registertool.php">Add Tools</a></li>
-										<li><a href="#">Remove Tools</a></li>
-										<li><a href="#">Edit a Tool</a></li>
+										<li><a href="_ADMIN/removetool.php">Remove Tools</a></li>
+										<li><a href="_ADMIN/editselect.php">Edit a Tool</a></li>
 										<li class="divider"></li>
 										<li><a href="#">Reporting</a></li>
 										<li class="divider"></li>
@@ -130,18 +142,43 @@ Spring 2015
 					<div class="col-lg-8 col-lg-offset-2">
 						<ol class="breadcrumb breadcrumb-color">
 							<li><a href="../index.php">Home</a></li>
-							<li class="active"><? echo 'Rentals: ' . $_GET['category']; ?></li>
+							<li class="active"><? echo 'Rentals: ' . $cat; ?></li>
 						</ol>
 						
 						<div class="row">
 							<!-- ADD PHP LOOP HERE -->
-							<?
-								while($x <= 19) {
+							<?	
+								$query = "SELECT * FROM tools WHERE category = '$cat' AND status = 'in'";
+								$result = mysqli_query($dbc, $query) or die('Category read error!');
+								
+								$array = array();
+								
+								$index = 0;
+								while($row = mysqli_fetch_assoc($result))
+								{
+									$array[$index] = $row;
+									$index++;
+								}
+								
+								$max = $index;
+								
+								$numrows = mysqli_num_rows($result);
+								
+								if (mysqli_num_rows($result) == 0)
+								{
+									header('Location: index.php?rc=1');
+									exit;
+								}
+								
+								$x = 0;
+								
+								while($x < $max) {
 									echo '<div class="col-lg-3 col-sm-4 col-xs-6">
-										<a href="checkout.php?tool=' . $_GET['category'] . $x . '" class="thumbnail">
-											 <p class="text-center">' . $_GET['category'] . $x . '</p>
+										<a href="checkout.php?tool=' . $array[$x][toolID] . '&name=' . $array[$x][name] . '" class="thumbnail">
+											 <p class="text-center">' . $array[$x][name] . '</p>
 										</a>
 									</div>';
+
 									$x++;
 								}
 							?>

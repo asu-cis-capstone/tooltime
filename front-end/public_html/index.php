@@ -94,8 +94,8 @@ Spring 2015
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Panel <span class="caret"></span></a>
 									  <ul class="dropdown-menu" role="menu">
 										<li><a href="_ADMIN/registertool.php">Add Tools</a></li>
-										<li><a href="#">Remove Tools</a></li>
-										<li><a href="#">Edit a Tool</a></li>
+										<li><a href="_ADMIN/removetool.php">Remove Tools</a></li>
+										<li><a href="_ADMIN/editselect.php">Edit a Tool</a></li>
 										<li class="divider"></li>
 										<li><a href="#">Reporting</a></li>
 										<li class="divider"></li>
