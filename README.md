@@ -59,7 +59,7 @@ Generally, during development, our team works on the site live with a continuous
 **V0.4**
 * See our video at http://youtu.be/FUd0Qv5si7o
 
-**V0.4**
+**V0.5**
 * Check-In
 * Check-Out
 * Edit Tools
