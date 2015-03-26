@@ -60,4 +60,4 @@ Generally, during development, our team works on the site live with a continuous
 * See our video at http://youtu.be/FUd0Qv5si7o
 
 **V0.4**
-*
+* WIP
