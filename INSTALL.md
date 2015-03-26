@@ -7,6 +7,14 @@
 * Git Bash (manage repository)
 * Notepad++ (edit files)
 
+Help links for the above programs:
+phpMyAdmin          - https://phpmyadmin-english-united-kingdom.readthedocs.org/en/latest/
+WAMP install guide  - https://make.wordpress.org/core/handbook/installing-a-local-server/installing-wampserver/
+FTP Client (WinSCP) - http://winscp.net/eng/docs/guides
+Git and Git Bash    - http://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide
+Notepad ++          - http://hubpages.com/hub/A-Complete-Beginners-Guide-to-Notepad
+
+
 ##Implementing
 1. Obtain domain hosting with MySQL server (we use GoDaddy)
 2. Import and customize the provided SQL file to your own database.
