@@ -1,10 +1,10 @@
 <?php
 	//server-connect.php
 
-	$host 	= '127.0.0.1';
-	$user 	= 'root';
-	$pw 	= 'root';
-	$db		= 'tool';
+	$host 	= '';
+	$user 	= '';
+	$pw 	= '';
+	$db		= '';
 	$dsn = "mysql:dbname=$db;host=$host";
 
 
