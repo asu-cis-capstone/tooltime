@@ -105,18 +105,11 @@ Spring 2015
 								}
 							?>
 						  </ul>
-						  <form class="navbar-form navbar-left" role="search">
-							<div class="form-group">
-							  <input type="text" class="form-control" placeholder="Search">
-							</div>
-							<button type="submit" class="btn btn-default btn-color">Go</button>
-						  </form>
 						  <ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["employee"]; ?> <span class="caret"></span></a>
 							  <ul class="dropdown-menu" role="menu">
-								<li><a href="#">Account Info</a></li>
-								<li><a href="#">Rental History</a></li>
+								<li><a href="../history.php">Rental History</a></li>
 								<li class="divider"></li>
 								<li><a href="../logout.php">Sign Out</a></li>
 							  </ul>
@@ -137,10 +130,43 @@ Spring 2015
 							<form action="removetoolprocess.php" method="post">
 								<h3 class="dark-grey">Tool Removal</h3>
 												
-								<div class="form-group col-lg-6" style="width: 100%;">
-									<label>BERCO ID#</label>
-									<input type="text" name="bercoid" class="form-control" id="bercoid" value="" required autofocus>
-								</div>			
+								<?	
+								$query = "SELECT * FROM tools";
+								$result = mysqli_query($dbc, $query) or die('Category read error!');
+								
+								$array = array();
+								
+								$index = 0;
+								while($row = mysqli_fetch_assoc($result))
+								{
+									$array[$index] = $row;
+									$index++;
+								}
+								
+								$max = $index;
+								
+								$numrows = mysqli_num_rows($result);
+								
+								if (mysqli_num_rows($result) == 0)
+								{
+									header('Location: index.php?rc=1');
+									exit;
+								}
+								
+								$x = 0;
+							?>
+								
+								<label for ="location">Tool</label>
+									<select name="bercoid" class="form-control" value="" id="bercoid" required>
+										<?
+											while($x < $max) {
+												echo '<option value="' . $array[$x][bayleyID] . '">' . $array[$x][name] . '[' . $array[$x][bayleyID] . ']</option>';
+												$x++;
+											}
+										?>		
+									</select>
+								
+								</br>			
 								
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary center-block alert-danger">Remove</button>		

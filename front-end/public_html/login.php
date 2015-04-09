@@ -62,7 +62,13 @@ index.php (LOGIN)
 					<h2>Bayley Construction</h2>
 					<div class="form-group">
 						<label for="email">Email address:</label>
-						<input type="email" class="form-control" id="email" name="email" required autofocus>
+							
+						<input type="email" class="form-control" id="email" name="email" 
+						required autofocus
+						title="Email: 6-100 chars, l/c, valid email only!"
+						pattern="[a-z0-9.-_$]+@[a-z0-9-]+\.[a-z]{2,6}"
+						maxlength="100"
+						/>
 					</div>
 					<div class="form-group">
 						<label for="pwd">Password:</label>

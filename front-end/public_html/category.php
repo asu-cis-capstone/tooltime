@@ -117,18 +117,11 @@ Spring 2015
 								}
 							?>
 						  </ul>
-						  <form class="navbar-form navbar-left" role="search">
-							<div class="form-group">
-							  <input type="text" class="form-control" placeholder="Search">
-							</div>
-							<button type="submit" class="btn btn-default btn-color">Go</button>
-						  </form>
 						  <ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["employee"]; ?> <span class="caret"></span></a>
 							  <ul class="dropdown-menu" role="menu">
-								<li><a href="#">Account Info</a></li>
-								<li><a href="#">Rental History</a></li>
+								<li><a href="history.php">Rental History</a></li>
 								<li class="divider"></li>
 								<li><a href="../logout.php">Sign Out</a></li>
 							  </ul>
@@ -142,7 +135,7 @@ Spring 2015
 					<div class="col-lg-8 col-lg-offset-2">
 						<ol class="breadcrumb breadcrumb-color">
 							<li><a href="../index.php">Home</a></li>
-							<li class="active"><? echo 'Rentals: ' . $cat; ?></li>
+							<li class="active"><? echo $cat; ?></li>
 						</ol>
 						
 						<div class="row">
@@ -174,8 +167,8 @@ Spring 2015
 								
 								while($x < $max) {
 									echo '<div class="col-lg-3 col-sm-4 col-xs-6">
-										<a href="checkout.php?tool=' . $array[$x][toolID] . '&name=' . $array[$x][name] . '" class="thumbnail">
-											 <p class="text-center">' . $array[$x][name] . '</p>
+										<a href="checkout.php?tool=' . $array[$x][toolID] . '&name=' . $array[$x][name] . '&cat=' . $cat . '" class="thumbnail">
+											 <p class="text-center">' . $array[$x][name] . '</br>[' . $array[$x][toolID] . ']</p>
 										</a>
 									</div>';
 

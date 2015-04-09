@@ -2,9 +2,9 @@
 	//server-connect.php
 	
 	$host 	= 'localhost';
-	$user 	= '';
-	$pw 	= '';
-	$db		= '';
+	$user 	= 'brlacquement';
+	$pw 	= 'Loweshats12';
+	$db		= 'tooltime';
 	
 	// Connect to the database
 	$dbc	= mysqli_connect($host, $user, $pw, $db)

@@ -1,6 +1,6 @@
 <?php
 	// Start a php session
-	include('../_CONNECT/server-connect.php');
+	include('_CONNECT/server-connect.php');
 	
 	// Start a php session
 	session_name("employee");
@@ -9,7 +9,7 @@
 	//Check to see if user is not logged in
 	if(!isset($_SESSION['employee']))
 	{
-		header("Location: ../login.php");
+		header("Location: login.php");
 		exit;
 	}
 	
@@ -21,7 +21,7 @@
 
 <!--
 ToolTime
-register.php (USER)
+checkout.php
 CIS 440
 Spring 2015
 -->
@@ -107,18 +107,12 @@ Spring 2015
 								}
 							?>
 						  </ul>
-						  <form class="navbar-form navbar-left" role="search">
-							<div class="form-group">
-							  <input type="text" class="form-control" placeholder="Search">
-							</div>
-							<button type="submit" class="btn btn-default btn-color">Go</button>
-						  </form>
+
 						  <ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["employee"]; ?> <span class="caret"></span></a>
 							  <ul class="dropdown-menu" role="menu">
-								<li><a href="#">Account Info</a></li>
-								<li><a href="#">Rental History</a></li>
+								<li><a href="history.php">Rental History</a></li>
 								<li class="divider"></li>
 								<li><a href="../logout.php">Sign Out</a></li>
 							  </ul>
@@ -132,22 +126,69 @@ Spring 2015
 					<div class="col-lg-8 col-lg-offset-2">
 						<ol class="breadcrumb breadcrumb-color">
 							<li><a href="../index.php">Home</a></li>
-							<li class="active">Tool Check-Out</li>
+							<li><a href="javascript:history.back()"><? echo $_GET['cat']; ?></a></li>
+							<li class="active">Check-Out</li>
 						</ol>
 						
 						<div class="jumbotron jumbotron-register center-block">
 							<form action="processcheckout.php" method="post">
 								<h3 class="dark-grey">Rental Information</h3>
-								<h3 style="color: red;"><? echo $_GET['name']; ?></h3>
-																	
-								<div class="form-group col-lg-6">
+								<h4 style="color: red;"><? echo $_GET['name'] . ' [' . $_SESSION['tool'] . ']'; ?></h4>											
+								
+								<!--<div class="form-group col-lg-6">
 									<label>Job #:</label>
-									<input type="text" name="jobno" class="form-control" id="jobno" value="" required autofocus>
+									<input type="text" name="jobno" class="form-control" id="jobno" value="" 
+									required autofocus
+									title="5 digit number!"
+									pattern="[0-9]{5,5}"
+									/>
+								</div>-->
+								
+								<?	
+									$query = "SELECT * FROM jobs";
+									$result = mysqli_query($dbc, $query) or die('Category read error!');
+									
+									$array = array();
+									
+									$index = 0;
+									while($row = mysqli_fetch_assoc($result))
+									{
+										$array[$index] = $row;
+										$index++;
+									}
+									
+									$max = $index;
+									
+									$numrows = mysqli_num_rows($result);
+									
+									if (mysqli_num_rows($result) == 0)
+									{
+										header('Location: index.php?rc=1');
+										exit;
+									}
+									
+									$x = 0;
+								?>
+								
+								<div class="form-group col-lg-6">
+								<label for ="location">Job #</label>
+									<select name="jobno" class="form-control" value="" id="jobno" required>
+										<?
+											while($x < $max) {
+												echo '<option value="' . $array[$x][jobNum] . '">' . $array[$x][jobNum] . ' - ' . $array[$x][jobName] . '</option>';
+												$x++;
+											}
+										?>		
+									</select>
 								</div>
 								
 								<div class="form-group col-lg-6">
 									<label>Cost Code:</label>
-									<input type="costcode" name="costcode" class="form-control" id="costcode" value="" required>
+									<input type="costcode" name="costcode" class="form-control" id="costcode" value="" 
+									required autofocus
+									title="8 digit number, no dashes or periods!"
+									pattern="[0-9]{8,8}"
+									/>
 								</div>
 			
 								<div class="form-group">

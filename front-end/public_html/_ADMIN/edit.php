@@ -106,17 +106,11 @@ Spring 2015
 							?>
 						  </ul>
 						  <form class="navbar-form navbar-left" role="search">
-							<div class="form-group">
-							  <input type="text" class="form-control" placeholder="Search">
-							</div>
-							<button type="submit" class="btn btn-default btn-color">Go</button>
-						  </form>
 						  <ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["employee"]; ?> <span class="caret"></span></a>
 							  <ul class="dropdown-menu" role="menu">
-								<li><a href="#">Account Info</a></li>
-								<li><a href="#">Rental History</a></li>
+								<li><a href="../history.php">Rental History</a></li>
 								<li class="divider"></li>
 								<li><a href="../logout.php">Sign Out</a></li>
 							  </ul>
@@ -159,7 +153,12 @@ Spring 2015
 												
 								<div class="form-group col-lg-6">
 									<label>BERCO ID#</label>
-									<input type="text" name="bercoid" class="form-control" id="bercoid" value="<? echo $BERCOID;?>" required autofocus readonly>
+									<input type="text" name="bercoid" class="form-control" id="bercoid" value="<? echo $BERCOID;?>" 
+									required autofocus
+									title="6 digits! Numbers only!"
+									pattern="[0-9]{6,10}"
+									readonly
+									/>
 								</div>
 								
 								<div class="form-group col-lg-6">

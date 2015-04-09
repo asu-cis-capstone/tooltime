@@ -1,6 +1,6 @@
 <?php
 	// Start a php session
-	include('_CONNECT/server-connect.php');
+	include('../_CONNECT/server-connect.php');
 	
 	// Start a php session
 	session_name("employee");
@@ -14,12 +14,11 @@
 	}
 ?>
 
-
 <!DOCTYPE html>
 
 <!--
 ToolTime
-toolcheckin.php (TOOL CHECK IN)
+reporting.php
 CIS 440
 Spring 2015
 -->
@@ -27,7 +26,7 @@ Spring 2015
 <html>
 	<head>
 		<!--TITLE-->
-			<title>ToolTime: Check-In</title>
+			<title>ToolTime: Reporting</title>
 		
 		<!--REQ FOR RESPONSIVE BOOTSTRAP-->
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -58,7 +57,7 @@ Spring 2015
 			<!---->
 		
 		<!--LOCAL FAVICON LINK-->
-			<link rel="icon" href="images/favicon.ico" />			
+			<link rel="icon" href="../images/favicon.ico" />	
 	</head>
 	
 	<body>
@@ -77,15 +76,16 @@ Spring 2015
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </button>
-						  <a class="navbar-brand" href="index.php">
-						  <img src = "images/longlogo.png" id="headerimg" alt = "Logo">
+						  <a class="navbar-brand" href="../index.php
+						  ">
+						  <img src = "../images/longlogo.png" id="headerimg" alt = "Logo">
 						  </a>  
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						  <ul class="nav navbar-nav">
-							<li class="fix"><a href="toolcheckin.php">Tool Check-In <span class="sr-only">(current)</span></a></li>
+							<li class="fix"><a href="../toolcheckin.php">Tool Check-In <span class="sr-only">(current)</span></a></li>
 							<!--<li><a href="#">Link</a></li>-->
 							<?
 								if($_SESSION['title'] == "Admin")
@@ -93,13 +93,13 @@ Spring 2015
 									echo '<li class="dropdown">
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Panel <span class="caret"></span></a>
 									  <ul class="dropdown-menu" role="menu">
-										<li><a href="_ADMIN/registertool.php">Add Tools</a></li>
-										<li><a href="_ADMIN/removetool.php">Remove Tools</a></li>
-										<li><a href="_ADMIN/editselect.php">Edit a Tool</a></li>
+										<li><a href="registertool.php">Add Tools</a></li>
+										<li><a href="removetool.php">Remove Tools</a></li>
+										<li><a href="editselect.php">Edit a Tool</a></li>
 										<li class="divider"></li>
 										<li><a href="#">Reporting</a></li>
 										<li class="divider"></li>
-										<li><a href="_ADMIN/register.php">Add A User</a></li>
+										<li><a href="register.php">Add A User</a></li>
 									  </ul>
 									</li>';
 								}
@@ -109,9 +109,9 @@ Spring 2015
 							<li class="dropdown">
 							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["employee"]; ?> <span class="caret"></span></a>
 							  <ul class="dropdown-menu" role="menu">
-								<li><a href="history.php">Rental History</a></li>
+								<li><a href="../history.php">Rental History</a></li>
 								<li class="divider"></li>
-								<li><a href="logout.php">Sign Out</a></li>
+								<li><a href="../../logout.php">Sign Out</a></li>
 							  </ul>
 							</li>
 						  </ul>
@@ -120,31 +120,63 @@ Spring 2015
 				</nav>
 				
 				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<ol class="breadcrumb breadcrumb-color">
-								<li><a href="index.php">Home</a></li>
-								<li class="active">Tool Check-In</li>
-							</ol>
-							
-							<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">						<ol class="breadcrumb breadcrumb-color">							<li><a href="../../index.php">Home</a></li>							<li class="active"></li>						</ol>
+						
+						<div class="row">
 							<!-- ADD PHP LOOP HERE -->
-							<?
-								//1. Query DB to find all tools checked out for THIS employee
-								$id = $_SESSION['id'];
-								$query = "SELECT tool_id,tools.name FROM trans_log,tools WHERE trans_log.employee_id = '$id' AND trans_log.type = 'out' AND tools.status = 'out' AND tools.toolID = trans_log.tool_id ORDER BY timestamp";
-								$result = mysqli_query($dbc, $query)or die('Death at out-tool grab');
+							<?/*	
+								$query = "SELECT * FROM tools";
+								$result = mysqli_query($dbc, $query) or die('Category read error!');
 								
-								//2. Print out results (similar to sample loop)
-								while($row = $result->fetch_array()) {
-									echo '<div class="col-lg-3 col-sm-4 col-xs-6">
-										<a href="confirmcheckin.php?tool=' . $row['tool_id'] . '&name=' . $row['name'] . '" class="thumbnail">
-											 <p class="text-center">' .  $row['name'] . '</br>[' . $row['tool_id'] . ']</p>
-										</a>
-									</div>';
+								$array = array();
+								
+								$index = 0;
+								while($row = mysqli_fetch_assoc($result))
+								{
+									$array[$index] = $row;
+									$index++;
 								}
-								//3. Pass tool info in head with the href
-			
+								
+								$max = $index;
+								
+								$numrows = mysqli_num_rows($result);
+								
+								if (mysqli_num_rows($result) == 0)
+								{
+									header('Location: ../index.php?rc=1');
+									exit;
+								}
+								
+								$x = 0;
+								
+								function array_to_csv_download($array, $filename = "export.csv", $delimiter=";") 
+								{    
+									// open raw memory as file so no temp files needed, you might run out of memory though    
+									$f = fopen('php://memory', 'w');     
+									
+									// loop over the input array    
+									foreach ($array as $line) 
+									{         
+										// generate csv lines from the inner arrays        
+										fputcsv($f, $line, $delimiter);     
+									}    
+									
+									// rewrind the "file" with the csv lines    
+									fseek($f, 0);    
+									
+									// tell the browser it's going to be a csv file    
+									header('Content-Type: application/csv');    
+									
+									// tell the browser we want to save it instead of displaying it    
+									header('Content-Disposition: attachement; filename="'.$filename.'";');    
+									
+									// make php send the generated csv lines to the browser    
+									fpassthru($f);}
+									array_to_csv_download(array(  
+									array(1,2,3,4), // this array is going to be the first row  
+									array(1,2,3,4)), // this array is going to be the second row  
+									"numbers.csv");
+								*/
 							?>
 							<!-- END PHP LOOP -->
 							</div>
@@ -153,9 +185,10 @@ Spring 2015
 									<p class="text-center">Bayley Construction &copy; 2015</p>
 								</div>
 							</footer>
-						</div>
+						
 					</div>
 				</div>
+				
 			</div>
 			<!--/PAGE CONTENT WRAPPER-->
 		</div>

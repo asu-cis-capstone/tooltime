@@ -109,18 +109,11 @@ Spring 2015
 								}
 							?>
 						  </ul>
-						  <form class="navbar-form navbar-left" role="search">
-							<div class="form-group">
-							  <input type="text" class="form-control" placeholder="Search">
-							</div>
-							<button type="submit" class="btn btn-default btn-color">Go</button>
-						  </form>
 						  <ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["employee"]; ?> <span class="caret"></span></a>
 							  <ul class="dropdown-menu" role="menu">
-								<li><a href="#">Account Info</a></li>
-								<li><a href="#">Rental History</a></li>
+								<li><a href="history.php">Rental History</a></li>
 								<li class="divider"></li>
 								<li><a href="../logout.php">Sign Out</a></li>
 							  </ul>
@@ -140,7 +133,7 @@ Spring 2015
 						<div class="jumbotron jumbotron-register center-block">
 							<form action="processcheckin.php" method="post">
 								<h3 class="dark-grey">Rental Information</h3>
-								<h3 style="color: red;">Are you sure you want to return: <? echo $_SESSION['tool_name']; //2. MAY NEED UPDATED?></h3>
+								<h4 style="color: red;">Are you sure you want to return: <? echo $_SESSION['tool_name']; ?>?</h4>
 			
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary center-block">Confirm</button>		

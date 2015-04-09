@@ -78,7 +78,17 @@
 	
 	//Close
 	mysqli_close($dbc);
+	
+	//Email
+	// The message
+	$message = "Rental return from Employee No. $employee for Tool No. $tool";
 
-	header('Location: index.php');
+	// In case any of our lines are larger than 70 characters, we should use wordwrap()
+	$message = wordwrap($message, 70, "\r\n");
+
+	// Send
+	mail('brlacquement@gmail.com', 'Rental Return', $message);
+
+	header('Location: index.php?rc=2');
 	exit;
 ?>

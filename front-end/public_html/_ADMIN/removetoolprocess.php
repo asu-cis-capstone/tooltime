@@ -21,5 +21,5 @@ $result = mysqli_query($dbc, $query) or die('Unable to remove from database!');
 mysqli_close($dbc);
 
 //Redirect
-header( 'Location: ../index.php' );
+header( 'Location: ../index.php?rc=3' );
 ?>

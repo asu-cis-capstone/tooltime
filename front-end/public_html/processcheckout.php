@@ -24,7 +24,7 @@
 	$tool = $_SESSION['tool'];
 	$employee = $_SESSION['id'];
 	$type = 'out';
-	
+		
 	//Test for all variables
 	//echo ' Job ' . $jobno . ' CC ' . $costcode . ' Tool ' . $tool . ' Employee ' . $employee;
 	
@@ -40,7 +40,18 @@
 	$result1 = mysqli_query($dbc, $query1) or die('Unable to write to DB');
 	//Update status in tools
 	mysqli_close($dbc);
-	header("Location: ../index.php");
+	header("Location: ../index.php?rc=1");
+	
+	//Email
+	// The message
+	$message = "Rental request from Employee No. $employee for Tool No. $tool";
+
+	// In case any of our lines are larger than 70 characters, we should use wordwrap()
+	$message = wordwrap($message, 70, "\r\n");
+
+	// Send
+	mail('brlacquement@gmail.com', 'Rental Request', $message);
+
 	exit;
 	
 ?>

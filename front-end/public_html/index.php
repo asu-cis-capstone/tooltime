@@ -57,7 +57,19 @@ Spring 2015
 			<!---->
 		
 		<!--LOCAL FAVICON LINK-->
-			<link rel="icon" href="images/favicon.ico" />	
+			<link rel="icon" href="images/favicon.ico" />
+
+		<?
+			$rc = $_GET['rc'];
+			//echo '</br></br><h1>'. $rc .'</h1>';
+			if ($rc == '1'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Tool rented successfully!</div>'; }
+			if ($rc == '2'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Tool checked-in successfully!</div>'; }
+			if ($rc == '3'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Tool removed succesfully!</div>'; }
+			if ($rc == '4'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Tool updated successfully!</div>'; }
+			if ($rc == '5'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">User added successfully!</div>'; }
+			if ($rc == '6'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Tool added successfully!</div>'; }
+			
+		?>
 	</head>
 	
 	<body>
@@ -97,7 +109,7 @@ Spring 2015
 										<li><a href="_ADMIN/removetool.php">Remove Tools</a></li>
 										<li><a href="_ADMIN/editselect.php">Edit a Tool</a></li>
 										<li class="divider"></li>
-										<li><a href="#">Reporting</a></li>
+										<li><a href="_ADMIN/reporting.php">Reporting</a></li>
 										<li class="divider"></li>
 										<li><a href="_ADMIN/register.php">Add A User</a></li>
 									  </ul>
@@ -105,18 +117,11 @@ Spring 2015
 								}
 							?>
 						  </ul>
-						  <form class="navbar-form navbar-left" role="search">
-							<div class="form-group">
-							  <input type="text" class="form-control" placeholder="Search">
-							</div>
-							<button type="submit" class="btn btn-default btn-color">Go</button>
-						  </form>
 						  <ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["employee"]; ?> <span class="caret"></span></a>
 							  <ul class="dropdown-menu" role="menu">
-								<li><a href="#">Account Info</a></li>
-								<li><a href="#">Rental History</a></li>
+								<li><a href="history.php">Rental History</a></li>
 								<li class="divider"></li>
 								<li><a href="../logout.php">Sign Out</a></li>
 							  </ul>

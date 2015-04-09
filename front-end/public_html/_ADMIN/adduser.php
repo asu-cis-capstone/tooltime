@@ -42,7 +42,7 @@ if($rpassword == $password)
 	mysqli_close($dbc);
 
 	//Redirect
-	header( 'Location: ../index.php' );
+	header( 'Location: ../index.php?rc=5' );
 }
 else
 {

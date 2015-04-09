@@ -9,17 +9,17 @@
 	//Check to see if user is not logged in
 	if(!isset($_SESSION['employee']))
 	{
-		header("Location: ../login.php");
+		header("Location: login.php");
 		exit;
 	}
+	$id=$_SESSION['id'];
 ?>
-
 
 <!DOCTYPE html>
 
 <!--
 ToolTime
-toolcheckin.php (TOOL CHECK IN)
+history.php
 CIS 440
 Spring 2015
 -->
@@ -27,7 +27,7 @@ Spring 2015
 <html>
 	<head>
 		<!--TITLE-->
-			<title>ToolTime: Check-In</title>
+			<title>ToolTime: History</title>
 		
 		<!--REQ FOR RESPONSIVE BOOTSTRAP-->
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -46,19 +46,19 @@ Spring 2015
 			<!--JS 1.11.3-->	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 		
 		<!--LOCAL CSS LINKS-->
-			<!--BOOTSTRAP-->	<link 	href = "../css/bootstrap.min.css" rel = "stylesheet">
-			<!--OVERWRITE-->	<link 	href = "../css/style.css" rel = "stylesheet">
+			<!--BOOTSTRAP-->	<link 	href = "css/bootstrap.min.css" rel = "stylesheet">
+			<!--OVERWRITE-->	<link 	href = "css/style.css" rel = "stylesheet">
 		
 		<!--LOCAL SCRIPT LINKS-->
-			<!--BOOTSTRAP-->	<script src = "../js/bootstrap.js"></script>
-			<!--NAVBAR-->		<script src = "../js/navbar.js"></script>
-			<!--JQUERY-->		<script src = "../js/jquery-2.1.3.js"></script>
+			<!--BOOTSTRAP-->	<script src = "js/bootstrap.js"></script>
+			<!--NAVBAR-->		<script src = "js/navbar.js"></script>
+			<!--JQUERY-->		<script src = "js/jquery-2.1.3.js"></script>
 		
 		<!--LOCAL CAKEPHP LINKS-->
 			<!---->
 		
 		<!--LOCAL FAVICON LINK-->
-			<link rel="icon" href="images/favicon.ico" />			
+			<link rel="icon" href="images/favicon.ico" />	
 	</head>
 	
 	<body>
@@ -77,7 +77,8 @@ Spring 2015
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </button>
-						  <a class="navbar-brand" href="index.php">
+						  <a class="navbar-brand" href="index.php
+						  ">
 						  <img src = "images/longlogo.png" id="headerimg" alt = "Logo">
 						  </a>  
 						</div>
@@ -109,9 +110,9 @@ Spring 2015
 							<li class="dropdown">
 							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["employee"]; ?> <span class="caret"></span></a>
 							  <ul class="dropdown-menu" role="menu">
-								<li><a href="history.php">Rental History</a></li>
+								<li><a href="#">Rental History</a></li>
 								<li class="divider"></li>
-								<li><a href="logout.php">Sign Out</a></li>
+								<li><a href="../logout.php">Sign Out</a></li>
 							  </ul>
 							</li>
 						  </ul>
@@ -120,42 +121,79 @@ Spring 2015
 				</nav>
 				
 				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-lg-offset-2">
-							<ol class="breadcrumb breadcrumb-color">
-								<li><a href="index.php">Home</a></li>
-								<li class="active">Tool Check-In</li>
-							</ol>
-							
-							<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<ol class="breadcrumb breadcrumb-color">
+							<li><a href="../index.php">Home</a></li>
+							<li class="active">History</li>
+						</ol>
+						
+						
 							<!-- ADD PHP LOOP HERE -->
-							<?
-								//1. Query DB to find all tools checked out for THIS employee
-								$id = $_SESSION['id'];
-								$query = "SELECT tool_id,tools.name FROM trans_log,tools WHERE trans_log.employee_id = '$id' AND trans_log.type = 'out' AND tools.status = 'out' AND tools.toolID = trans_log.tool_id ORDER BY timestamp";
-								$result = mysqli_query($dbc, $query)or die('Death at out-tool grab');
+							<?	
+								$query = "SELECT * FROM rental_log WHERE employee_id = '$id'";
+								$result = mysqli_query($dbc, $query) or die('Category read error!');
 								
-								//2. Print out results (similar to sample loop)
-								while($row = $result->fetch_array()) {
-									echo '<div class="col-lg-3 col-sm-4 col-xs-6">
-										<a href="confirmcheckin.php?tool=' . $row['tool_id'] . '&name=' . $row['name'] . '" class="thumbnail">
-											 <p class="text-center">' .  $row['name'] . '</br>[' . $row['tool_id'] . ']</p>
-										</a>
-									</div>';
+								$array = array();
+								
+								$index = 0;
+								while($row = mysqli_fetch_assoc($result))
+								{
+									$array[$index] = $row;
+									$index++;
 								}
-								//3. Pass tool info in head with the href
-			
+								
+								$max = $index;
+								
+								$numrows = mysqli_num_rows($result);
+								
+								if (mysqli_num_rows($result) == 0)
+								{
+									header('Location: index.php?rc=1');
+									exit;
+								}
+								
+								$x = 0;
 							?>
-							<!-- END PHP LOOP -->
+							
+							<div class="col-lg-112">           
+							<h3>Rental History</h3>
+							  <table class="table table-striped">
+								<thead>
+								  <tr>
+									<th>Rental #</th>
+									<th>BERCO ID</th>
+									<th>Job #</th>
+									<th>Cost Code</th>
+									<th>Time Rented</th>
+									<th>Cost</th>
+								  </tr>
+								</thead>
+								<tbody>
+								<?
+									while($x < $max) {
+									echo '<tr>
+											<td>' . $array[$x][id] . '</td>
+											<td>' . $array[$x][tool_id] . '</td>
+											<td>' . $array[$x][job_no] . '</td>
+											<td>' . $array[$x][costcode] . '</td>
+											<td>' . $array[$x][time_rented] . '</td>
+											<td>$' . $array[$x][cost] . '</td>
+										  </tr>';
+									$x++;
+								}
+								?>	  
+								</tbody>
+							  </table>
+							</div>							
+						<footer class="col-lg-8">
+							<div class="container-fluid">
+								<p class="text-center">Bayley Construction &copy; 2015</p>
 							</div>
-							<footer class="footer">
-								<div class="container-fluid">
-									<p class="text-center">Bayley Construction &copy; 2015</p>
-								</div>
-							</footer>
-						</div>
+						</footer>
+						
 					</div>
 				</div>
+				
 			</div>
 			<!--/PAGE CONTENT WRAPPER-->
 		</div>

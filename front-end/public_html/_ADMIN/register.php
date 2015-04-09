@@ -105,18 +105,11 @@ Spring 2015
 								}
 							?>
 						  </ul>
-						  <form class="navbar-form navbar-left" role="search">
-							<div class="form-group">
-							  <input type="text" class="form-control" placeholder="Search">
-							</div>
-							<button type="submit" class="btn btn-default btn-color">Go</button>
-						  </form>
 						  <ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
 							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["employee"]; ?> <span class="caret"></span></a>
 							  <ul class="dropdown-menu" role="menu">
-								<li><a href="#">Account Info</a></li>
-								<li><a href="#">Rental History</a></li>
+								<li><a href="../history.php">Rental History</a></li>
 								<li class="divider"></li>
 								<li><a href="../logout.php">Sign Out</a></li>
 							  </ul>
@@ -139,32 +132,58 @@ Spring 2015
 																	
 								<div class="form-group col-lg-6">
 									<label>Email Address</label>
-									<input type="email" name="email" class="form-control" id="email" value="" required autofocus>
+									<input type="email" name="email" class="form-control" id="email" value="" 
+									required autofocus
+									title="Email: 6-50 chars, l/c, valid email only!"
+									pattern="[a-z0-9.-_$]+@[a-z0-9-]+\.[a-z]{2,6}"
+									maxlength="50"
+									/>
 								</div>
 								
 								<div class="form-group col-lg-6">
 									<label>Title</label>
-									<input type="text" name="title" class="form-control" id="title" value="" required>
+									<input type="text" name="title" class="form-control" id="title" value="" 
+									required autofocus
+									title="Title: 4-20 chars, texts only!"
+									pattern="[a-zA-Z]{4,20}"
+									 />
 								</div>
 								
 								<div class="form-group col-lg-6">
 									<label>First Name</label>
-									<input type="text" name="firstname" class="form-control" id="firstname" value="" required>
+									<input type="text" name="firstname" class="form-control" id="firstname" value=""
+									title="Text only!"
+									required autofocus
+									pattern="[a-zA-Z]{2,16}"
+									/>
 								</div>
 								
 								<div class="form-group col-lg-6">
 									<label>Last Name</label>
-									<input type="text" name="lastname" class="form-control" id="lastname" value="" required>
+									<input type="text" name="lastname" class="form-control" id="lastname" value="" 
+									required autofocus
+									title="Text only!"
+									pattern="[a-zA-Z]{2,16}"
+									/>
 								</div>
 								
 								<div class="form-group col-lg-6">
 									<label>Password</label>
-									<input type="password" name="password" class="form-control" id="password" value="" required>
+									<input type="password" name="password" class="form-control" id="password" value="" 
+									required autofocus 
+									title="Password: 5-15 chars, U/l, 0-9, . - _ ! $ only!"
+									onchange="form.rpassword.pattern=this.value;"									
+									pattern="[a-zA-Z0-9.-_!$]{5,15}"
+									
+									/>
 								</div>
 								
 								<div class="form-group col-lg-6">
 									<label>Repeat Password</label>
-									<input type="password" name="rpassword" class="form-control" id="rpassword" value="" required>
+									<input type="password" name="rpassword" class="form-control" id="rpassword" value="" 
+									required autofocus 
+									title="Passwords must match!" 
+									/>
 								</div>
 			
 								<div class="form-group">
