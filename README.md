@@ -66,3 +66,18 @@ Generally, during development, our team works on the site live with a continuous
 * Remove Tools
 * Improved Install.md
 * Database cleaning script
+
+**V0.6**
+* Removed search bar
+* Confirmation pop-ups
+* Improved bread-crumb flow
+* Removed Account Info
+* Added Rental History functionality
+* Added email functionality for check-in/out alerts
+* Added ID # to category listings and check-out/in page
+* Changed to drop downs for edit/remove tools
+* Changed to drop downs for job # on check-out
+* Added jobs table in DB
+* Form validation with HTML
+* Bug fix: Eliminated quotes from DB through header
+* Added real data to DB for tools
