@@ -25,7 +25,6 @@ ToolTime is hosted throgh GoDaddy on a web domain paired with a MySQL server (ve
 Generally, during development, our team works on the site live with a continuous deployment approach. We then use FTP to move updated files to our GitHub repo during version releases. Some scripting is troublehshooted offline in a WAMP server.
 
 ##Backlog [![Stories in Ready](https://badge.waffle.io/asu-cis-capstone/tooltime.svg?label=ready&title=Ready)](http://waffle.io/asu-cis-capstone/tooltime)
-- Form field validation
 - Geotagging during transactions
 - Security features
 
@@ -81,3 +80,9 @@ Generally, during development, our team works on the site live with a continuous
 * Form validation with HTML
 * Bug fix: Eliminated quotes from DB through header
 * Added real data to DB for tools
+
+**V1.0**
+* First release!
+* Increased input validation
+* Increased error handling
+* Minor styling tweaks
