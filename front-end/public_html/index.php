@@ -61,14 +61,18 @@ Spring 2015
 
 		<?
 			$rc = $_GET['rc'];
-			//echo '</br></br><h1>'. $rc .'</h1>';
+			if ($rc == '0'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Error: No rows found!</div>'; }
 			if ($rc == '1'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Tool rented successfully!</div>'; }
 			if ($rc == '2'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Tool checked-in successfully!</div>'; }
 			if ($rc == '3'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Tool removed succesfully!</div>'; }
 			if ($rc == '4'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Tool updated successfully!</div>'; }
 			if ($rc == '5'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">User added successfully!</div>'; }
 			if ($rc == '6'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Tool added successfully!</div>'; }
-			
+			if ($rc == '7'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Job added successfully!</div>'; }
+			if ($rc == '8'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Job updated successfully!</div>'; }
+			if ($rc == '9'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Job removed successfully!</div>'; }
+			if ($rc == '10'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Employee updated successfully!</div>'; }
+			if ($rc == '11'){ echo '<div class="col-lg-8 col-sm-8 col-xs-8 col-lg-offset-2 col-sm-offset-2 col-xs-offset-2 alert alert-success" role="alert">Employee removed successfully!</div>'; }															
 		?>
 	</head>
 	
@@ -106,12 +110,22 @@ Spring 2015
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Panel <span class="caret"></span></a>
 									  <ul class="dropdown-menu" role="menu">
 										<li><a href="_ADMIN/registertool.php">Add Tools</a></li>
-										<li><a href="_ADMIN/removetool.php">Remove Tools</a></li>
-										<li><a href="_ADMIN/editselect.php">Edit a Tool</a></li>
+										<li><a href="_ADMIN/editselect.php">Update a Tool</a></li>										
+										<li><a href="_ADMIN/removetool.php">Remove Tool</a></li>
 										<li class="divider"></li>
-										<li><a href="_ADMIN/reporting.php">Reporting</a></li>
+										<li><a href="_ADMIN/createjob.php">Add a Job</a></li>
+										<li><a href="_ADMIN/updatejob_select.php">Update a Job</a></li>
+										<li><a href="_ADMIN/removejob.php">Remove a Job</a></li>																				
 										<li class="divider"></li>
 										<li><a href="_ADMIN/register.php">Add A User</a></li>
+										<li><a href="_ADMIN/updateemployee_select.php">Update A User</a></li>
+										<li><a href="_ADMIN/removeemployee.php">Remove A User</a></li>
+										<li class="divider"></li>
+										<li><a href="_ADMIN/list_employee.php">All Employees</a></li>
+										<li><a href="_ADMIN/list_job.php">All Jobs</a></li>
+										<li><a href="_ADMIN/list_tool.php">All Tools</a></li>										
+										<li class="divider"></li>
+										<li><a href="_ADMIN/reporting.php">Reporting</a></li>
 									  </ul>
 									</li>';
 								}

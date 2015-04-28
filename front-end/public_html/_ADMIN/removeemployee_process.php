@@ -1,17 +1,15 @@
 <?php
-//REMOVE TOOL
+//REMOVE EMPLOYEE
 
 // Connect to DB
 include('../_CONNECT/server-connect.php');
 
 //Collect & escape form inputs
-$obercoid = $_POST['bercoid'];
-$bercoid = mysqli_real_escape_string($dbc,$obercoid);
-
-//echo $bercoid;
+$oid = $_POST['id'];
+$id = mysqli_real_escape_string($dbc,$oid);
 
 // Build SQL statement
-$query = "DELETE FROM tools WHERE '$bercoid' = toolID";	
+$query = "DELETE FROM employee WHERE '$id' = id";	
 //echo $query;
 
 // Run it!
@@ -21,5 +19,5 @@ $result = mysqli_query($dbc, $query) or die('Unable to remove from database!');
 mysqli_close($dbc);
 
 //Redirect
-header( 'Location: ../index.php?rc=3' );
+header( 'Location: ../index.php?rc=11' );
 ?>

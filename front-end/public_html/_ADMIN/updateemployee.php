@@ -12,10 +12,6 @@
 		header("Location: ../login.php");
 		exit;
 	}
-	
-	//1. Get tool info from head and store in session (escape it)
-	$_SESSION['tool_id'] = $_GET['tool'];
-	$_SESSION['tool_name'] = $_GET['name'];
 ?>
 
 
@@ -23,7 +19,7 @@
 
 <!--
 ToolTime
-register.php (USER)
+updateemployee.php
 CIS 440
 Spring 2015
 -->
@@ -31,7 +27,7 @@ Spring 2015
 <html>
 	<head>
 		<!--TITLE-->
-			<title>ToolTime: Checkout</title>
+			<title>ToolTime: Edit Employee</title>
 		
 		<!--REQ FOR RESPONSIVE BOOTSTRAP-->
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -62,7 +58,7 @@ Spring 2015
 			<!---->
 		
 		<!--LOCAL FAVICON LINK-->
-			<link rel="icon" href="../images/favicon.ico" />	
+			<link rel="icon" href="../images/favicon.ico" />			
 	</head>
 	
 	<body>
@@ -97,23 +93,23 @@ Spring 2015
 									echo '<li class="dropdown">
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Panel <span class="caret"></span></a>
 									  <ul class="dropdown-menu" role="menu">
-										<li><a href="_ADMIN/registertool.php">Add Tools</a></li>
-										<li><a href="_ADMIN/editselect.php">Update a Tool</a></li>										
-										<li><a href="_ADMIN/removetool.php">Remove Tool</a></li>
+										<li><a href="registertool.php">Add Tools</a></li>
+										<li><a href="editselect.php">Update a Tool</a></li>										
+										<li><a href="removetool.php">Remove Tool</a></li>
 										<li class="divider"></li>
-										<li><a href="_ADMIN/createjob.php">Add a Job</a></li>
-										<li><a href="_ADMIN/updatejob_select.php">Update a Job</a></li>
-										<li><a href="_ADMIN/removejob.php">Remove a Job</a></li>																				
+										<li><a href="createjob.php">Add a Job</a></li>
+										<li><a href="updatejob_select.php">Update a Job</a></li>
+										<li><a href="removejob.php">Remove a Job</a></li>																				
 										<li class="divider"></li>
-										<li><a href="_ADMIN/register.php">Add A User</a></li>
-										<li><a href="_ADMIN/updateemployee_select.php">Update A User</a></li>
-										<li><a href="_ADMIN/removeemployee.php">Remove A User</a></li>
+										<li><a href="register.php">Add A User</a></li>
+										<li><a href="updateemployee_select.php">Update A User</a></li>
+										<li><a href="removeemployee.php">Remove A User</a></li>
 										<li class="divider"></li>
-										<li><a href="_ADMIN/list_employee.php">All Employees</a></li>
-										<li><a href="_ADMIN/list_job.php">All Jobs</a></li>
-										<li><a href="_ADMIN/list_tool.php">All Tools</a></li>										
+										<li><a href="list_employee.php">All Employees</a></li>
+										<li><a href="list_job.php">All Jobs</a></li>
+										<li><a href="list_tool.php">All Tools</a></li>										
 										<li class="divider"></li>
-										<li><a href="_ADMIN/reporting.php">Reporting</a></li>
+										<li><a href="reporting.php">Reporting</a></li>
 									  </ul>
 									</li>';
 								}
@@ -123,7 +119,7 @@ Spring 2015
 							<li class="dropdown">
 							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION["employee"]; ?> <span class="caret"></span></a>
 							  <ul class="dropdown-menu" role="menu">
-								<li><a href="history.php">Rental History</a></li>
+								<li><a href="../history.php">Rental History</a></li>
 								<li class="divider"></li>
 								<li><a href="../logout.php">Sign Out</a></li>
 							  </ul>
@@ -137,16 +133,63 @@ Spring 2015
 					<div class="col-lg-8 col-lg-offset-2">
 						<ol class="breadcrumb breadcrumb-color">
 							<li><a href="../index.php">Home</a></li>
-							<li class="active">Tool Check-Out</li>
+							<li class="active">Admin: Edit Employee</li>
 						</ol>
 						
+						<?
+							$id = $_POST['id'];
+							$query = "SELECT * FROM employee WHERE id = '$id'";
+							//echo $query;
+							$result = mysqli_query($dbc,$query);
+							$row = $result->fetch_array();
+							
+							$ID = $row['id'];
+							$FIRSTNAME = $row['firstName'];
+							$LASTNAME = $row['lastName'];
+							$EMAIL = $row['email'];
+							$TITLE = $row['title'];	
+						?>
+						
 						<div class="jumbotron jumbotron-register center-block">
-							<form action="processcheckin.php" method="post">
-								<h3 class="dark-grey">Rental Information</h3>
-								<h4 style="color: red;">Are you sure you want to return: <? echo $_SESSION['tool_name']; ?>?</h4>
-			
+							<form action="updateemployee_process.php" method="post">
+								<h3 class="dark-grey">Edit: <? echo $FIRSTNAME . ' ' . $LASTNAME;?></h3>
+												
+								<div class="form-group col-lg-6">
+									<label>ID#</label>
+									<input type="text" name="id" class="form-control" id="id" value="<? echo $ID;?>" 
+									required autofocus
+									pattern="[0-9]{6,10}"
+									readonly
+									/>
+								</div>
+								
+								<div class="form-group col-lg-6">
+									<label>First Name</label>
+									<input type="text" name="firstname" class="form-control" id="firstname" value="<? echo $FIRSTNAME; ?>" required>
+								</div>
+								
+								<div class="form-group col-lg-6">
+									<label>Last Name</label>
+									<input type="text" name="lastname" class="form-control" id="lastname" value="<? echo $LASTNAME; ?>" required>
+								</div>
+								
+								<div class="form-group col-lg-6">
+									<label>Email</label>
+									<input type="email" name="email" class="form-control" id="email" value="<? echo $EMAIL; ?>" required>
+								</div>		
+								
+								<div class="form-group col-lg-6">
+									<label>Title</label>
+									<input type="text" name="title" class="form-control" id="title" value="<? echo $TITLE; ?>" required>
+								</div>
+								
+								<div class="form-group col-lg-6">
+									<label>Password</label>
+									<input type="text" name="password" class="form-control" id="password" value="LOCKED" required readonly>
+								</div>
+
 								<div class="form-group">
-									<button type="submit" class="btn btn-primary center-block">Confirm</button>		
+									<button type="submit" class="btn btn-primary center-block alert-info">Update</button>		
 								</div>	
 							</form>
 						</div>

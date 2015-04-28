@@ -94,12 +94,22 @@ Spring 2015
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Panel <span class="caret"></span></a>
 									  <ul class="dropdown-menu" role="menu">
 										<li><a href="registertool.php">Add Tools</a></li>
-										<li><a href="removetool.php">Remove Tools</a></li>
-										<li><a href="editselect.php">Edit a Tool</a></li>
+										<li><a href="editselect.php">Update a Tool</a></li>										
+										<li><a href="removetool.php">Remove Tool</a></li>
 										<li class="divider"></li>
-										<li><a href="#">Reporting</a></li>
+										<li><a href="createjob.php">Add a Job</a></li>
+										<li><a href="updatejob_select.php">Update a Job</a></li>
+										<li><a href="removejob.php">Remove a Job</a></li>																				
 										<li class="divider"></li>
 										<li><a href="register.php">Add A User</a></li>
+										<li><a href="updateemployee_select.php">Update A User</a></li>
+										<li><a href="removeemployee.php">Remove A User</a></li>
+										<li class="divider"></li>
+										<li><a href="list_employee.php">All Employees</a></li>
+										<li><a href="list_job.php">All Jobs</a></li>
+										<li><a href="list_tool.php">All Tools</a></li>										
+										<li class="divider"></li>
+										<li><a href="reporting.php">Reporting</a></li>
 									  </ul>
 									</li>';
 								}
@@ -131,7 +141,7 @@ Spring 2015
 								<h3 class="dark-grey">Edit Tool</h3>
 
 								<?	
-								$query = "SELECT * FROM tools";
+								$query = "SELECT  FROM tools";
 								$result = mysqli_query($dbc, $query) or die('Category read error!');
 								
 								$array = array();
@@ -149,14 +159,14 @@ Spring 2015
 								
 								if (mysqli_num_rows($result) == 0)
 								{
-									header('Location: index.php?rc=1');
+									header('Location: index.php?rc=0');
 									exit;
 								}
 								
 								$x = 0;
 							?>
 								
-								<label for ="location">Tool</label>
+								<label for ="location">Select Tool:</label>
 									<select name="bercoid" class="form-control" value="" id="bercoid" required>
 										<?
 											while($x < $max) {
